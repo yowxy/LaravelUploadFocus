@@ -52,7 +52,6 @@ class User extends Authenticatable
     }
 
     public static function return_sesuatu(){
-            return $this->abc;
     }
 
 }
