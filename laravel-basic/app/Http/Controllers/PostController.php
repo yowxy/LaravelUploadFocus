@@ -13,7 +13,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::active()->get();
+        // withtrashed scop untuk menampilkan data yang udah di softdeletes 
+        $posts = Post::active()->withTrashed()->get();
         $view_data = [
             'post'  => $posts
         ];
