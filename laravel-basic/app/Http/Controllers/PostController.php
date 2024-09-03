@@ -36,7 +36,7 @@ class PostController extends Controller
         $title = $request->input('title');
         $content = $request->input('content');
 
-        DB::table('post')->insert([
+        Post::insert([
             "title" => $title,
             "content" => $content,
             "created_at" => date('Y-m-d H:i:s'),
@@ -52,10 +52,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-            $posts = DB::table('post')
-            ->select('id','title','content','created_at')
-            ->where('id', '=',$id)
-            ->first();
+            $posts = Post::where('id', '=',$id)
+                        ->first();
 
             $view_data = [
                 'post' => $posts
@@ -70,9 +68,7 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        $posts = DB::table('post')
-            ->select('id','title','content','created_at')
-            ->where('id', '=',$id)
+        $posts = Post::where('id', '=',$id)
             ->first();
 
             $view_data = [
@@ -91,13 +87,12 @@ class PostController extends Controller
         $title = $request->input('title');
         $content = $request->input('content');
 
-        DB::table('post')
-        ->where('id', '=', $id)
-        ->update([
-            'title' => $title,
-            'content' => $content,
-            'updated_at' => date('Y-m-d H:i:s'), // Corrected column name
-        ]);
+      Post::where('id', '=', $id)
+            ->update([
+                'title' => $title,
+                'content' => $content,
+                'updated_at' => date('Y-m-d H:i:s'), // Corrected column name
+            ]);
 
         return redirect("posts/{$id}");
 
@@ -108,9 +103,8 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        DB::table('post')
-        ->where('id','=',$id)
-        ->delete();
+       Post::where('id','=',$id)
+            ->delete();
         return redirect('posts');
     }
 }
