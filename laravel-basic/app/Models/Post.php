@@ -15,6 +15,19 @@ class Post extends Model
 
     // Define the relationship between Post and Comment
 
+    public  $fillable = [
+        'title',
+        'content',
+    ];
+
+    public static function boot(){
+        parent::boot();
+
+        static::creating(function($post){
+            $post->slug = str_replace(' ','-' ,$post->title);
+        });
+    }
+
     public function total_comments(){
         return $this->comments()->count();
     }
