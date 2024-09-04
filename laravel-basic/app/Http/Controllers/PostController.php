@@ -16,7 +16,7 @@ class PostController extends Controller
         // withtrashed scop untuk menampilkan data yang udah di softdeletes
         $posts = Post::active()->withTrashed()->get();
         $view_data = [
-            'post'  => $posts
+            'post'  => $posts,
         ];
          return view ("posts.index", $view_data);
     }
@@ -53,11 +53,13 @@ class PostController extends Controller
      */
     public function show($id)
     {
-            $posts = Post::where('id', '=',$id)
-                        ->first();
-
+            $posts = Post::where('id', '=',$id)->first();
+            $comments= $posts->comments()->get();
+            $total_comments = $posts->total_comments();
             $view_data = [
-                'post' => $posts
+                'post' => $posts,
+                'comments' =>$comments,
+                'total_comments' => $total_comments,
             ];
 
 

@@ -14,6 +14,11 @@ class Post extends Model
     protected $table = 'post'; // Mapping the model to the 'post' table
 
     // Define the relationship between Post and Comment
+
+    public function total_comments(){
+        return $this->comments()->count();
+    }
+
     public function comments()
     {
         return $this->hasMany(Comment::class);
