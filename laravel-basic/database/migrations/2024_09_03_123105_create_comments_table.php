@@ -15,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('post_id');
+            $table->foreignId('post_id')->constrained('post')->onDelete('cascade');
             $table->string('comment');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -29,8 +30,6 @@ return new class extends Migration
         Schema::dropIfExists('comments');
     }
 
-    public function comments(){
-        return $this->hasMany(Comment::class, '','' );
-    }
+
 
 };
