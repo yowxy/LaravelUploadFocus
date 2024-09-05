@@ -5,7 +5,11 @@
                 <li><a href="{{ url('posts') }}" class="nav-link px-2 text-secondary">Home</a></li>
             </ul>
             <div class="text-end">
+                @if(Auth::check())
+                <a href="{{ url('logout') }}" class="btn btn-outline-light me-2">Logout</a>
+                @else
                 <a href="{{ url('login') }}" class="btn btn-outline-light me-2">Login</a>
+                @endif
             </div>
         </div>
     </div>

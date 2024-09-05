@@ -13,7 +13,7 @@ Route::get('/', function () {
 
 Route::get('login', [AuthController::class, 'login']);
 Route::post('login', [AuthController::class, 'authenticate']);
-
+Route::get('logout',[AuthController::class, 'logout']);
 
 Route::post('posts', [PostController::class, 'store']); // Handles form submission
 Route::get('posts', [PostController::class, 'index']); // Lists posts
