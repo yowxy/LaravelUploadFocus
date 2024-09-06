@@ -17,29 +17,39 @@ class BlogPosted extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+
+     protected $post;
+
+    public function __construct($post)
     {
-        //
+        $this->post = $post;
     }
 
     /**
      * Get the message envelope.
      */
+
     public function envelope(): Envelope
     {
         return new Envelope(
             from: new Address('yowxy@example.com', 'yowxy from github'),
-            subject: 'Blog Baru ',
+            subject: "Blog Baru | {$this->post->title}",
         );
     }
+
 
     /**
      * Get the message content definition.
      */
     public function content(): Content
     {
+
         return new Content(
             view: 'mails.blog_posted',
+            with : [
+                'post' => $this->post,
+                
+            ]
         );
     }
 
