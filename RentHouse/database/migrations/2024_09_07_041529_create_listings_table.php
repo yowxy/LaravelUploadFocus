@@ -40,12 +40,5 @@ return new class extends Migration
         Schema::dropIfExists('listings');
     }
 
-    public function getRouteKeyName(){
-        return 'slug';
-    }
-
-    public function setAttribute ($value){
-        $this->atributes['title'] = $value;
-        $this->atributes['slug'] = Str::slug($value);
-    }
+  
 };
