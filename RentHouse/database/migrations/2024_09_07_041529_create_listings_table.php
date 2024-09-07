@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 return new class extends Migration
 {
@@ -37,5 +38,14 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('listings');
+    }
+
+    public function getRouteKeyName(){
+        return 'slug';
+    }
+
+    public function setAttribute ($value){
+        $this->atributes['title'] = $value;
+        $this->atributes['slug'] = Str::slug($value);
     }
 };
