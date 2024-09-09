@@ -15,7 +15,7 @@ class Transaction extends Model
         'user_id',
         'listing_id',
         'start_date',
-        'end_date',
+        'end_date', 
         'price_per_day',
         'total_days',
         'fee',
@@ -25,18 +25,18 @@ class Transaction extends Model
 
     public function setListingidAttribute($value){
         $listing = Listing::find($value);
-        $total_days = Carbon::createFromDate($this->attributes['start_date'])->diffInDays($this->attributes['end_date']+1);
+        $total_days = Carbon::createFromDate($this->attributes['start_date'])
+                            ->diffInDays(Carbon::createFromDate($this->attributes['end_date'])->addDay());
         $totalPrice = $listing->price_per_day * $total_days;
         $fee = $totalPrice * 0.1;
 
-        $this->attributes['listing_id'] = $value;
-        $this->attributes['price_per_day'] =   $listing->price_per_day;
-        $this->attributes['tota_days'] = $total_days;
+        $this->attributes['listings_id'] = $value; // Keep 'listings_id' to match your schema
+        $this->attributes['price_per_day'] = $listing->price_per_day;
+        $this->attributes['total_days'] = $total_days;
         $this->attributes['fee'] = $fee;
-        $this->attributes['total_price'] = $totalPrice * $fee;
-
-
+        $this->attributes['total_price'] = $totalPrice + $fee;
     }
+
 
     public function user(): BelongsTo
     {
