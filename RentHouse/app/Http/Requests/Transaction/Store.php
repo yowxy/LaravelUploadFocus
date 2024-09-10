@@ -26,7 +26,7 @@ class Store extends FormRequest
     public function rules(): array
     {
         return [
-            'listings_id' => 'required|exits|listings,id',
+            'listings_id' => 'required|exists:listings,id', // Corrected 'exists'
             'start_date' => 'required|date|',
             'end_date' => 'required|date|after_or_equal:start_date',
         ];

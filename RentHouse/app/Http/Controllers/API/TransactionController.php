@@ -15,7 +15,7 @@ class TransactionController extends Controller
     private function _fullyBookedChecker(Store $request)
     {
         $listing = Listing::find($request->listings_id);
-        $runningTransactionCount = Transaction::whereListingId($listing->id)
+        $runningTransactionCount = Transaction::where('listings_id', $listing->id)
             ->whereNot('status', 'canceled')
             ->where(function ($query) use ($request) {
                 $query->whereBetween('start_date', [
@@ -28,18 +28,27 @@ class TransactionController extends Controller
                     $subquery->where('start_date', '<', $request->start_date)
                         ->where('end_date', '>', $request->end_date);
                 });
-            });
+            })->count();
 
-            if($runningTransactionCount >= $listing->max_person){
-                throw new HttpResponseException(
-                    response()->json([
-                        'success' => false,
-                        'message' => 'Listing is fully booked',
-                    ], JsonResponse::HTTP_UNPROCESSABLE_ENTITY)
-                );
-            }
+        if ($runningTransactionCount >= $listing->max_person) {
+            throw new HttpResponseException(
+                response()->json([
+                    'success' => false,
+                    'message' => 'Listing is fully booked',
+                ], JsonResponse::HTTP_UNPROCESSABLE_ENTITY)
+            );
+        }
 
-            return true;
+        return true;
+    }
 
+    public function isAvailable(Store $request)
+    {
+        $this->_fullyBookedChecker($request);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Listing is ready to book'
+        ]);
     }
 }
