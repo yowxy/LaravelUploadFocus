@@ -51,4 +51,27 @@ class TransactionController extends Controller
             'message' => 'Listing is ready to book'
         ]);
     }
+
+
+    public function store (Store $request)
+    {
+        $this->_fullyBookedChecker($request);
+        $transaction = Transaction::create([
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'listing_id' => $request->listings_id, // Ensure this field is passed
+            'user_id' => auth()->id(),
+        ]);
+
+
+        $transaction->Listing;
+        return response()->json([
+            'success' => true,
+            'message' => 'New Transaction created',
+            'data' => $transaction,
+        ]);
+
+    }
+
+
 }

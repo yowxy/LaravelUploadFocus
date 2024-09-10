@@ -15,7 +15,7 @@ class Transaction extends Model
         'user_id',
         'listing_id',
         'start_date',
-        'end_date', 
+        'end_date',
         'price_per_day',
         'total_days',
         'fee',
@@ -46,6 +46,6 @@ class Transaction extends Model
 
     public function Listing(): BelongsTo
     {
-        return $this->belongsTo(Listing::class);
+        return $this->belongsTo(Listing::class, 'listings_id'); // Ensure the foreign key is correct
     }
 }
