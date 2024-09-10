@@ -44,9 +44,9 @@ class Listing extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function Transaction(): HasMany
+    public function transactions(): HasMany
     {
-        return $this->hasMany(Transaction::class);
+        return $this->hasMany(Transaction::class, 'listings_id'); // Specify the correct foreign key
     }
 
 }
