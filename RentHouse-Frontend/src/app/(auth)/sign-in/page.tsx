@@ -17,6 +17,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/components/atomics/use-toast";
+import { useLoginMutation } from "@/services/auth.service";
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -36,16 +37,33 @@ function SignIn() {
     },
   });
 
-  function onSubmit(values: FormData) {
-    console.log("🚀 ~ onSubmit ~ values:", values);
-    form.reset();
-    toast({
-      title: "Welcome",
-      description: "Sign in successfully",
-      open: true,
-    });
-    router.push("/");
+  const [login, { isLoading }] = useLoginMutation();
+  async function onSubmit(values: FormData) {
+    try {
+      const res = await login(values).unwrap();
+      console.log("🚀 ~ onSubmit Success ~res:", res); // Add detailed success logging
+  
+      form.reset();
+      toast({
+        title: "Welcome",
+        description: "Sign in successfully",
+        open: true,
+      });
+  
+      // router.push("/"); // Optionally redirect
+    } catch (error: any) {
+      console.error("🚀 ~ onSubmit Error ~error:", error); // Log the error details
+      
+      // Provide fallback if error.data or error.data.message is undefined
+      const errorMessage = error?.data?.message || "An unexpected error occurred. Please try again.";
+      toast({
+        title: "Something went wrong",
+        description: errorMessage,
+        variant: "destructive",
+      });
+    }
   }
+  
 
   return (
     <div
@@ -118,7 +136,9 @@ function SignIn() {
                 Remember me
               </label>
             </div>
-            <Button type="submit">Sign In</Button>
+            <Button type="submit" disabled={isLoading}>
+              Sign In
+            </Button>
             <Link href="/sign-up">
               <Button variant="third" type="button" className="mt-3">
                 Create New Account
