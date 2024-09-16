@@ -9,8 +9,17 @@ export const authapi = apiSlice.injectEndpoints({
               body: Credential, // Credential should match the expected API format
             }),
         }),
+
+        register: build.mutation({
+            query: (Credential) => ({
+                url: "/register",
+                method: 'POST',
+                body: Credential,
+            })
+        })
+
     }),
 });
 
 // Export the hook for login mutation
-export const { useLoginMutation } = authapi;
+export const { useLoginMutation,useRegisterMutation } = authapi;
