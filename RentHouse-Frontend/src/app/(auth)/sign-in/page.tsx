@@ -48,11 +48,14 @@ function SignIn() {
         const user = res.data;
       
         // Ensure you pass the correct params to signIn based on what NextAuth expects for credentials
+ 
         const loginRes = await signIn("credentials", {
+          id: user.id,
           email: user.email,
-          token: user.token, // Assuming the token is part of credentials
+          name: user.name,
+          token: user.token,
           callbackUrl: searchParams.get("callbackUrl") || "/",
-          redirect: false, // Set to false to prevent auto-redirect; we'll manually redirect
+          redirect: false,
         });
       
         if (loginRes?.error) {
