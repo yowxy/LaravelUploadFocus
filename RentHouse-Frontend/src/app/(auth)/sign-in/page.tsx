@@ -15,9 +15,10 @@ import {
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useToast } from "@/components/atomics/use-toast";
 import { useLoginMutation } from "@/services/auth.service";
+import { signIn } from "next-auth/react";
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -27,6 +28,7 @@ const schema = yup.object().shape({
 type FormData = yup.InferType<typeof schema>;
 
 function SignIn() {
+  const searchParams = useSearchParams();
   const router = useRouter();
   const { toast } = useToast();
   const form = useForm<FormData>({
@@ -41,15 +43,38 @@ function SignIn() {
   async function onSubmit(values: FormData) {
     try {
       const res = await login(values).unwrap(); 
-      console.log("🚀 ~ onSubmit Success ~res:", res); // Add detailed success logging
-  
-      form.reset();
-      toast({
-        title: "Welcome",
-        description: "Sign in successfully",
-        open: true,
-      });
-  
+
+      if (res.success) {
+        const user = res.data;
+      
+        // Ensure you pass the correct params to signIn based on what NextAuth expects for credentials
+        const loginRes = await signIn("credentials", {
+          email: user.email,
+          token: user.token, // Assuming the token is part of credentials
+          callbackUrl: searchParams.get("callbackUrl") || "/",
+          redirect: false, // Set to false to prevent auto-redirect; we'll manually redirect
+        });
+      
+        if (loginRes?.error) {
+          // Handle error from NextAuth if it occurs
+          toast({
+            title: "Sign In Failed",
+            description: loginRes.error || "An unknown error occurred",
+            variant: "destructive",
+            open: true,
+          });
+        } else {
+          toast({
+            title: "Welcome",
+            description: "Sign in successfully",
+            open: true,
+          });
+      
+          // Redirect to the callbackUrl or fallback to homepage
+          router.push(loginRes?.url || "/");
+        }
+      }
+      
       // router.push("/"); // Optionally redirect
     } catch (error: any) {
       console.error("🚀 ~ onSubmit Error ~error:", error); // Log the error details
@@ -64,7 +89,6 @@ function SignIn() {
     }
   }
   
-
   return (
     <div
       className={`px-6 py-24 lg:px-28 bg-primary-foreground bg-cover lg:bg-contain bg-right bg-no-repeat bg-[url('/images/bg-image.svg')] h-screen flex items-center`}
