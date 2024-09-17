@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    font-family: 'Poppins','sans-serif';
+    margin: 0;
+}
+
+
+.bg-navbar {
+    background-color: #007BFF;
+}
+
+
+.txt-login{
+    font-weight: 700;
+    font-size: 24;
+}
+
+
+.txt-signup{
+    font-weight: 700;
+    font-size: 24;
+}
+.input-search {
+    width: 522px;
+    height: 42px;
+}
+
+
+.btn-explore {
+    margin-right: 10px; /* Space between buttons */
+    width: auto;
+    height: 85px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 36px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; /* Optional for rounded corners */
+}
+
+.btn-create-account {
+    width: auto; /* Keeps the button flexible in width */
+    height: 85px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 36px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; /* Optional for rounded corners */
+}
+
+
+.btn-explore, .btn-create-account {
+    display: flex;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.gap-3 {
+    gap: 15px; /* Adjust the spacing as needed */
+}
+
+
+.h-415{
+    height: 415px;
+}
+
+
+
+.hero-image{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+.hero {
+    display: flex;
+    justify-content: space-between; /* Membuat jarak antara teks dan gambar */
+    align-items: center; /* Mengatur elemen vertikal agar rata */
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.mt-219{
+    margin-top: 219px;
+}
+
+
+#benefits {
+    margin-top: 199px; /* Tambahkan jarak yang lebih besar */
+}
+
+.card-layanan{
+    padding: 40px;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 10px;
+    height: 100%;
+    width: 305px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.card-layanan:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+.col-md-4 {
+    margin-right: 20px; /* Tambahkan jarak antar kolom */
+}
+
+#Latest {
+    margin-top: 100px;
+    padding: 50px 0;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+p {
+    color: #000;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card-latest {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card-latest:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+}
+
+.card-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #fff;
+    color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+
+
+#customer-testi {
+    margin-top: 180px;
+    padding: 50px 0;
+}
+
+#customer-testi h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#customer-testi p {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.testi-card {
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 412px;
+    height: 188px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.testi-card:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.testi-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.testi-profile h3 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.testi-card p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+.btn-shop{
+    justify-content: flex-start;
+}
+
+
+.footer{
+    padding: 0 20px;
+    text-align: center;
+}
+
+#MarketHub-footer{
+    margin-top: 120px;
+    background-color: #007BFF;
+    height: 300px;
+}
+
+
+#Markethub-footer a {
+    margin-left: 100px;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Poppins','sans-serif';
+    font-weight: 500;
+    font-size: 24px;
+    color: white; /* Or another contrasting color */
+    text-decoration: none;
+}
+
+.sosmed-logo {
+    width: 40px;
+    gap: 30;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+.markethub{
+    margin-bottom: 10px;
+}
+
+
+.market-foot{
+    margin-left: 15vw;
+}
+
+.foo-txt{
+    margin-left: 20px;
+}
+
+
+
+.col-md-7 {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start of the flex container */
+}
+
+.col-md-7 img {
+    margin-bottom: 10px; /* Space between the MarketHub image and social media icons */
+}
+
+.d-inline-block {
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    gap: 10px; /* Space between icons */
+}
+
+.login-section {
+    display: flex; /* Agar teks dan kotak biru sejajar horizontal */
+    align-items: flex-start; /* Menjaga teks dan kotak biru di bagian atas */
+    margin-top: 200px;
+    margin-left: 500px; /* Mengurangi margin agar tidak terlalu jauh dari kiri */
+}
+
+.text-section {
+    margin-right: 20px; /* Jarak antara teks dan kotak biru */
+}
+
+.card-login {
+    font-weight: 600;
+    height: 527px;
+    width: 521px;
+    background-color: #007BFF;
+    border-radius: 15px;
+}
+
+.card-login h1{
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.card-login p {
+    margin-left: 12px;
+}
+
+.input-login {
+margin-left: 10px;
+}
