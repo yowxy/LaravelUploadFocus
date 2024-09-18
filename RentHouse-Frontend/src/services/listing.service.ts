@@ -1,14 +1,14 @@
 import { apiSlice } from "./base-query";
 
 export const listingApi = apiSlice.injectEndpoints({
-    endpoints : (builder) => ({
-       getAllListing: builder.query({
-        query: () => ({
-            url: '/listing',
-            method: "GET",
-        }),
-       }),
+  endpoints: (build) => ({
+    getAllListing: build.query({
+      query: () => ({
+        url: "/listing",
+        method: "GET",
+      }),
     }),
-})
+  }),
+});
 
-export const {useGetAllListingQuery} = listingApi;
+export const { useGetAllListingQuery } = listingApi;
