@@ -66,13 +66,14 @@ function SignUp() {
           token: user.token,
           redirect: false,
         })
+        
         toast({
           title: "Welcome",
           description: "Sign up successfully",
           open: true,
         });
         
-        router.push("/");
+        // router.push("/");
       }
 
     } catch (error: any) {

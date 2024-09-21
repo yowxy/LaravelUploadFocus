@@ -56,8 +56,8 @@ function Detail({ params }: { params: { id: string } }) {
                     height={0}
                     width={0}
                     className="w-5 h-5 mr-1"
-                  />
-                  Shanghai, China
+                    />
+                 {listing?.address }
                 </div>
                 <div className="flex items-center font-semibold leading-6">
                   <Image
@@ -165,7 +165,7 @@ function Detail({ params }: { params: { id: string } }) {
           <CustomerReviews />
         </div>
         {listing && (
-          <BookingSection id={params?.id} price={listing?.price_per_day}/>
+          <BookingSection id={listing?.id} price={listing?.price_per_day}/>
         )}
       </section>
 
