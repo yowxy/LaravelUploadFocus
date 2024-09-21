@@ -17,13 +17,19 @@ class RecipeAuthorResource extends Resource
 {
     protected static ?string $model = RecipeAuthor::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                ->required()
+                ->maxLength(255),
+
+                Forms\Components\FileUpload::make('photo')
+                ->image()
+                ->required(),
             ]);
     }
 
@@ -31,7 +37,10 @@ class RecipeAuthorResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name')
+                ->searchable(),
+                Tables\Columns\ImageColumn::make('photo')
+                ->circular(),
             ])
             ->filters([
                 //
