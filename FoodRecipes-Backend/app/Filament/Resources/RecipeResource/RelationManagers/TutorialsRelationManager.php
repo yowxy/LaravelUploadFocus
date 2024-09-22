@@ -30,7 +30,7 @@ class TutorialsRelationManager extends RelationManager
             ->recordTitleAttribute('name')
             ->columns([
                     Tables\Columns\TextColumn::make('sequence')
-                    ->label('No')
+                    ->label('Step')
                     ->getStateUsing(function($rowLoop, $record){
                         return $rowLoop->iteration;
                     }),
