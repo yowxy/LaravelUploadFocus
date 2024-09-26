@@ -43,7 +43,7 @@
 
     {{-- Hero Section --}}
 
-    <section id="hero-section">
+    <section id="hero-section" class= " mb-28 position-relative" >
         <div class="container text-center">
             <p class="txt-h1 pt-5">We are a website <br />that hosts your portfolio</p>
             <p class="text-center text-white fs-4 ">Showcase Your Brilance</p>
@@ -99,7 +99,64 @@
 
 
     {{-- Information section  --}}
-    
+    <section id="information-section" class="pt-4 position-relative mb-12">
+        <div class="container pt-4 d-flex flex-column flex-md-row justify-content-start align-items-start">
+            <div class="text-section me-md-4 custom-margin">
+                <h1 class="fw-semibold">Share Your Portfolio on this Website</h1>
+                <p>
+                    The best platform to share your portfolio work <br>
+                    Easy upload, just swipe! Your works can be uploaded <br>
+                    immediately without any hassle. It's like posting on social <br>
+                    media, fast and simple!
+                </p>
+            </div>
+            <div class="img-section ms-4 ms-md-4 mx-10">
+                <img src="{{ url('images/laptop.png') }}" alt="laptop sains" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+    {{-- info2 section --}}
+
+    <section id="info2-section" class="position-relative" >
+        <div class="container pt-4 d-flex flex-column flex-md-row justify-content-start align-items-center ">
+            <img src="{{ url('images/UIUX2.png') }}" alt="" class="img-UI">
+            <div class=" me-md-5  txt-custom pt-2  mx-auto">
+                <h1 class="ms-2 fw-semibold" >Why should you choose <br>
+                    our website? <br>
+                </h1>
+                <p class="mx-2">
+                    MineFolioX is a portfolio platform designed for Gen Z, offering a simple <br>
+                    and modern way to create, manage and showcase your work. <br>
+                    With easy-to-use features such as secure login, registration,  <br>
+                    and efficient search tools, you can quickly connect with <br>
+                    potential clients or audiences.  <br>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    {{-- save personal section  --}}
+    <section id="save-personal" class="py-5 ">
+        <div class="container text-center">
+            <h1 class="fw-semibold mb-4">To save your personal Portfolio</h1>
+            <img src="{{ url('images/personal.png') }}" alt="personal" class="img-fluid img-save">
+        </div>
+    </section>
+
+
+    <footer id="footer-last">
+        <div class="container">
+            <h1 class="text-white pt-5  mx-auto">MineFolioX</h1>
+            <div class="">
+
+            </div>
+        </div>
+    </footer>
+
+
+
 
 </body>
 
