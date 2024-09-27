@@ -31,8 +31,8 @@
                             aria-label="Search">
                     </div>
                     <div class="d-flex">
-                        <button class="btn-sign-in mx-2 px-2" type="submit">Sign-Up</button>
-                        <button class="btn-sign-in mx-2 px-2" type="submit">Sign-In</button>
+                        <a class="btn-sign-in mx-2 px-2 text-decoration-none text-center justify-content-center" href="{{ url('register') }} ">Sign-Up</a>
+                        <a class="btn-sign-in mx-2 px-2 text-decoration-none text-center justify-content-center" href="{{ url('login') }} ">Sign-In</a>
                     </div>
                 </form>
 
@@ -149,8 +149,10 @@
     <footer id="footer-last">
         <div class="container">
             <h1 class="text-white pt-5  mx-auto">MineFolioX</h1>
-            <div class="">
-
+            <div class="mx-1">
+                <img src="{{ url('images/instagram.png') }}" alt="instagram" class="me-2 ">
+                <img src="{{ url('images/facebook.png') }}" alt="facebook" class="me-2" >
+                <img src="{{ url('images/X.png') }}" alt="X" class="me-2" >
             </div>
         </div>
     </footer>
