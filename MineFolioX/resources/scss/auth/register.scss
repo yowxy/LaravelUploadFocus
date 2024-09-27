@@ -1,0 +1,118 @@
+#MineFolioX {
+    font-size: 55px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    margin-left: 100px;
+    margin-top: 25px;
+}
+
+.register-name-email{
+    left: 1px;
+    top: 0px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 600;
+    word-wrap: break-word
+}
+
+.register-input-email{
+    border: none;
+    width: 463px;
+    height: 73px;
+    left: 0px;
+    top: 45px;
+    position: absolute;
+    background: #333333;
+    border-radius: 11px
+}
+
+.register-name {
+    left: 1px;
+    top: 0px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 600;
+    word-wrap: break-word
+}
+
+.register-input-name {
+    border: none;
+    width: 463px;
+    height: 73px;
+    left: 0px;
+    top: 45px;
+    position: absolute;
+    background: #333333;
+    border-radius: 11px
+}
+
+.register-password{
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 600;
+    word-wrap: break-word
+}
+
+.register-input-password{
+    border: none;
+    width: 463px;
+    height: 73px;
+    left: 0px;
+    top: 55px;
+    position: absolute;
+    background: #333333;
+    border-radius: 11px
+}
+
+.register-confirm-password {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 600;
+    word-wrap: break-word
+}
+
+.register-input-pw {
+    border: none;
+    width: 463px;
+    height: 73px;
+    left: 0px;
+    top: 55px;
+    position: absolute;
+    background: #333333;
+    border-radius: 11px
+}
+
+.btn-register {
+    margin-bottom: 77px;
+    font-weight: 700;
+    font-size: 40px;
+    border: none;
+    color: #fff;
+    width: 463px;
+    height: 73px;
+    left: 0px;
+    top: 0px;
+    background: #333333;
+    border-radius: 11px
+}
+
+input{
+    padding-left: 20px;
+    color: #fff;
+}
+
+input ::placeholder {
+    color: white;
+}
