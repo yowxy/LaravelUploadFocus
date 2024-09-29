@@ -1,3 +1,6 @@
+import { Swiper, SwiperSlide } from "swiper/react"
+import 'swiper/swiper-bundle.css';
+
 export default function Browse() {
   return (
     <>
@@ -42,13 +45,22 @@ export default function Browse() {
           <h2 className="font-bold">By Categories</h2>
         </div>
         <div className="swiper w-full mt-3">
-          <div className="swiper-wrapper">
-            <div className="swiper-slide !w-fit pb-[30px]">
+              <Swiper
+                className="w-full mt-3"
+                direction="horizontal"
+                spaceBetween={16}
+                slidesPerView="auto"
+                slidesOffsetBefore={20}
+                slidesOffsetAfter={20}
+              >
+
+
+            <SwiperSlide className="!w-fit pb-[30px]">
               <a href="category.html" className="card">
                 <div className="flex flex-col w-fit min-w-[90px] rounded-[31px] p-[10px] pb-5 gap-[10px] text-center bg-white shadow-[0_12px_30px_0_#D6D6D680] transition-all duration-300 hover:shadow-[0_10px_20px_0_#FF4C1C80] hover:bg-[#FF4C1C] hover:text-white">
                   <div className="flex shrink-0 w-[70px] h-[70px] rounded-full bg-white">
                     <img
-                      src="//assets/images/icons/bakery.png"
+                      src="/assets/images/icons/bakery.png"
                       className="object-cover w-full h-full object-top"
                       alt="icon"
                     />
@@ -58,8 +70,8 @@ export default function Browse() {
                   </h3>
                 </div>
               </a>
-            </div>
-            <div className="swiper-slide !w-fit pb-[30px]">
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit pb-[30px]">
               <a href="category.html" className="card">
                 <div className="flex flex-col w-fit min-w-[90px] rounded-[31px] p-[10px] pb-5 gap-[10px] text-center transition-all duration-300 shadow-[0_10px_20px_0_#FF4C1C80] bg-[#FF4C1C] text-white">
                   <div className="flex shrink-0 w-[70px] h-[70px] rounded-full bg-white">
@@ -74,8 +86,8 @@ export default function Browse() {
                   </h3>
                 </div>
               </a>
-            </div>
-            <div className="swiper-slide !w-fit pb-[30px]">
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit pb-[30px]">
               <a href="category.html" className="card">
                 <div className="flex flex-col w-fit min-w-[90px] rounded-[31px] p-[10px] pb-5 gap-[10px] text-center bg-white shadow-[0_12px_30px_0_#D6D6D680] transition-all duration-300 hover:shadow-[0_10px_20px_0_#FF4C1C80] hover:bg-[#FF4C1C] hover:text-white">
                   <div className="flex shrink-0 w-[70px] h-[70px] rounded-full bg-white">
@@ -90,8 +102,8 @@ export default function Browse() {
                   </h3>
                 </div>
               </a>
-            </div>
-            <div className="swiper-slide !w-fit pb-[30px]">
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit pb-[30px]">
               <a href="category.html" className="card">
                 <div className="flex flex-col w-fit min-w-[90px] rounded-[31px] p-[10px] pb-5 gap-[10px] text-center bg-white shadow-[0_12px_30px_0_#D6D6D680] transition-all duration-300 hover:shadow-[0_10px_20px_0_#FF4C1C80] hover:bg-[#FF4C1C] hover:text-white">
                   <div className="flex shrink-0 w-[70px] h-[70px] rounded-full bg-white">
@@ -106,8 +118,8 @@ export default function Browse() {
                   </h3>
                 </div>
               </a>
-            </div>
-            <div className="swiper-slide !w-fit pb-[30px]">
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit pb-[30px]">
               <a href="category.html" className="card">
                 <div className="flex flex-col w-fit min-w-[90px] rounded-[31px] p-[10px] pb-5 gap-[10px] text-center bg-white shadow-[0_12px_30px_0_#D6D6D680] transition-all duration-300 hover:shadow-[0_10px_20px_0_#FF4C1C80] hover:bg-[#FF4C1C] hover:text-white">
                   <div className="flex shrink-0 w-[70px] h-[70px] rounded-full bg-white">
@@ -122,9 +134,11 @@ export default function Browse() {
                   </h3>
                 </div>
               </a>
-            </div>
+            </SwiperSlide>
+            </Swiper>
+
           </div>
-        </div>
+
       </section>
       <section id="MadeByPeople">
         <div className="flex items-center justify-between px-5">
@@ -137,8 +151,16 @@ export default function Browse() {
           </a>
         </div>
         <div className="swiper w-full mt-3">
-          <div className="swiper-wrapper">
-            <div className="swiper-slide !w-fit">
+            <Swiper
+            className="w-full mt-3"
+                direction="horizontal"
+                spaceBetween={16}
+                slidesPerView="auto"
+                slidesOffsetBefore={20}
+                slidesOffsetAfter={20}
+            >
+
+            <SwiperSlide className="!w-fit">
               <a href="details.html" className="card">
                 <div className="relative w-[200px] h-[280px] rounded-[30px] bg-white overflow-hidden">
                   <img
@@ -169,8 +191,8 @@ export default function Browse() {
                   </div>
                 </div>
               </a>
-            </div>
-            <div className="swiper-slide !w-fit">
+            </SwiperSlide>
+            <SwiperSlide className=" !w-fit">
               <a href="details.html" className="card">
                 <div className="relative w-[200px] h-[280px] rounded-[30px] bg-white overflow-hidden">
                   <img
@@ -201,8 +223,8 @@ export default function Browse() {
                   </div>
                 </div>
               </a>
-            </div>
-            <div className="swiper-slide !w-fit">
+            </SwiperSlide>
+            <SwiperSlide className=" !w-fit">
               <a href="details.html" className="card">
                 <div className="relative w-[200px] h-[280px] rounded-[30px] bg-white overflow-hidden">
                   <img
@@ -233,9 +255,9 @@ export default function Browse() {
                   </div>
                 </div>
               </a>
-            </div>
+            </SwiperSlide>
+            </Swiper>
           </div>
-        </div>
       </section>
       <div
         id="BottomNav"
