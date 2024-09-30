@@ -150,8 +150,11 @@
             </div>
 
         </div>
+
     </section>
 
+
+    @include('components.footer')
 
 </body>
 </html>
