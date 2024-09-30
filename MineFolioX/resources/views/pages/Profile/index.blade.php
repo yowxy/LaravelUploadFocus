@@ -34,9 +34,9 @@
                 <div id="edit-profile" class="text-center pt-1 fw-medium justify-content-center me-3">
                     Edit Profile
                 </div>
-                <div id="edit-profile1" class="text-center pt-1 fw-medium justify-content-center">
+                <a id="edit-profile1" class="text-center pt-1 fw-medium justify-content-center"  href="{{ url('profile/upload') }}">
                     Upload Portofolio
-                </div>
+                </a>
             </div>
 
             <div id="My-Portofolio">

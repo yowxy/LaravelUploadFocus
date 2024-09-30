@@ -16,7 +16,7 @@
                     <img src="{{ url('images/profile-3.png') }}" alt="Profile Image" width="40px">
                     <div class="ms-2">
                         <p class="mb-0 fw-bold">Alexander</p>
-                        <a href="#" class="text-muted small text-decoration-none">Lihat Profile</a>
+                        <a href="{{ url('profile') }}" class="text-muted small text-decoration-none">Lihat Profile</a>
                     </div>
                 </div>
 
