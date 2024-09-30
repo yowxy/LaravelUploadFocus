@@ -48,10 +48,10 @@
             <p class="txt-h1 pt-5">We are a website <br />that hosts your portfolio</p>
             <p class="text-center text-white fs-4 ">Showcase Your Brilance</p>
             <div class="d-flex justify-content-center align-items-center gap-2">
-                <button class="btn-explore d-flex align-items-center">
+                <a class="btn-explore d-flex align-items-center text-decoration-none " href="{{ url('detail') }}">
                     Explore Now
                     <img src="{{ url('images/arrow.png') }}" alt="Arrow Icon" class="ms-2">
-                </button>
+                </a>
             </div>
 
             <div class="d-flex position-relative mt-5 justify-content-center ">
