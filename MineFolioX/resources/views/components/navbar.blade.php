@@ -5,7 +5,7 @@
 
  <nav class="navbar navbar-expand-lg bg-transparent">
     <div class="container mx-auto">
-        <a class="txt-a">MineFolioX</a>
+        <a class="txt-a"  href="{{ url('/') }}">MineFolioX</a>
         <div class="d-flex w-100 justify-content-center">
             <form class="d-flex justify-content-center align-items-center" role="search">
                 <div class="search-container d-flex align-items-center position-relative">
