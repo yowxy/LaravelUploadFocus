@@ -55,7 +55,7 @@
             </div>
 
             <div class="d-flex position-relative mt-5 justify-content-center ">
-                <div class="box-yellow me-3"> <!-- Add margin-end (me-3) to give space -->
+                <div class="box-yellow me-3 img-hover"> <!-- Add margin-end (me-3) to give space -->
                     <div style="width: 88px; height: 127px; left: 18px; top: 18px; position: absolute">
                         <div style="width: 84px; height: 63px; left: 4px; top: 0px; position: absolute">
                             <div class="uiux">UIX</div>
@@ -67,7 +67,7 @@
                     </div>
                 </div>
 
-                <div class="box-green me-3">
+                <div class="box-green me-3 img-hover">
                     <div style="width: 88px; height: 127px; left: 18px; top: 18px; position: absolute">
                         <div style="width: 84px; height: 63px; left: 4px; top: 0px; position: absolute">
                             <div class="uiux  text-white ">Graphic </div>
@@ -80,7 +80,7 @@
                 </div>
 
 
-                <div class="box-red">
+                <div class="box-red img-hover">
                     <div style="width: 88px; height: 127px; left: 18px; top: 18px; position: absolute">
                         <div style="width: 84px; height: 63px; left: 4px; top: 0px; position: absolute">
                             <div class="uiux  text-white ">Website</div>
@@ -100,7 +100,7 @@
 
     {{-- Information section  --}}
     <section id="information-section" class="pt-4 position-relative mb-12">
-        <div class="container pt-4 d-flex flex-column flex-md-row justify-content-start align-items-start">
+        <div class="container pt-4 d-flex flex-column flex-md-row justify-content-start align-items-start" data-aos="fade-left" >
             <div class="text-section me-md-4 custom-margin">
                 <h1 class="fw-semibold">Share Your Portfolio on this Website</h1>
                 <p>
@@ -111,16 +111,16 @@
                 </p>
             </div>
             <div class="img-section ms-4 ms-md-4 mx-10">
-                <img src="{{ url('images/laptop.png') }}" alt="laptop sains" class="img-fluid">
+                <img src="{{ url('images/laptop.png') }}" alt="laptop sains" class="img-fluid  img-hover ">
             </div>
         </div>
     </section>
 
     {{-- info2 section --}}
 
-    <section id="info2-section" class="position-relative" >
-        <div class="container pt-4 d-flex flex-column flex-md-row justify-content-start align-items-center ">
-            <img src="{{ url('images/UIUX2.png') }}" alt="" class="img-UI">
+    <section id="info2-section" class="position-relative">
+        <div class="container pt-4 d-flex flex-column flex-md-row justify-content-start align-items-center" data-aos="fade-right" >
+            <img src="{{ url('images/UIUX2.png') }}" alt="" class="img-UI  img-hover" data-aos="fade-up">
             <div class=" me-md-5  txt-custom pt-2  mx-auto">
                 <h1 class="ms-2 fw-semibold" >Why should you choose <br>
                     our website? <br>
@@ -141,7 +141,7 @@
     <section id="save-personal" class="py-5 ">
         <div class="container text-center">
             <h1 class="fw-semibold mb-4">To save your personal Portfolio</h1>
-            <img src="{{ url('images/personal.png') }}" alt="personal" class="img-fluid img-save">
+            <img src="{{ url('images/personal.png') }}" alt="personal" class="img-fluid img-save" data-aos="fade-up">
         </div>
     </section>
 

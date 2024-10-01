@@ -265,3 +265,12 @@
     margin-top: 100px;
     font-weight: 600;
 }
+
+.img-hover{
+    transition: transform .2s;
+}
+
+.img-hover:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+}
