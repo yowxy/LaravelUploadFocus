@@ -1,0 +1,101 @@
+*{
+    font-family: 'Poppins' ;
+}
+
+.txtEdit{
+    font-family: 'Poppins';
+}
+
+.txtEdit h1{
+    margin-top: 100px;
+    font-family: 'Poppins';
+    font-size: 64px;
+    font-weight: 600;
+}
+
+.edit-name input{
+    border-radius: 15px;
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    width: 630px;
+    height: 82px;
+}
+
+
+.edit-name h1 {
+    width: auto;
+    padding-left: 320px;
+    text-align: left;
+}
+
+.editEmail input {
+    border-radius: 15px;
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    width: 630px;
+    height: 82px;
+}
+
+.editEmail h1{
+    margin-top: 15px;
+    width: auto;
+    padding-left: 320px;
+    text-align: left;
+}
+
+.editPassword input{
+    border-radius: 15px;
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    width: 630px;
+    height: 82px;
+}
+
+.editPassword h1 {
+    margin-top: 15px;
+    width: auto;
+    padding-left: 320px;
+    text-align: left;
+}
+
+.editConfirmPass input {
+    border-radius: 15px;
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    width: 630px;
+    height: 82px;
+}
+
+.editConfirmPass h1 {
+    margin-top: 50px;
+    width: auto;
+    padding-left: 320px;
+    text-align: left;
+}
+
+
+
+
+.btnSave{
+    margin-bottom: 200px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 44px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    border-radius: 15px ;
+    border: none;
+    text-decoration: none;
+    background-color: #333333;
+    height: 95px;
+    color: #fff;
+    width: 624px;
+}
+

@@ -52,6 +52,10 @@ Route::get('profile/upload', function(){
     return view('pages.Profile.form');
 })->name('profile.upload');
 
+Route::get('profile/edit', function() {
+    return view('pages.Profile.edit');
+})->name('profile.edit');
+
 
 // Route::get('login', [AuthController::class, 'index']);
 // Route::get('register', [RegisterController::class, 'index']);
