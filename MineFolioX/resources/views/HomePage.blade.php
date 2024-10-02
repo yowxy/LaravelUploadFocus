@@ -31,8 +31,8 @@
                             aria-label="Search">
                     </div>
                     <div class="d-flex">
-                        <a class="btn-sign-in mx-2 px-2 text-decoration-none text-center justify-content-center" href="{{ url('register') }} ">Sign-Up</a>
-                        <a class="btn-sign-in mx-2 px-2 text-decoration-none text-center justify-content-center" href="{{ url('login') }} ">Sign-In</a>
+                        <a class="btn-sign-in mx-2 px-2 text-decoration-none text-center justify-content-center" href="{{ route('register') }} ">Sign-Up</a>
+                        <a class="btn-sign-in mx-2 px-2 text-decoration-none text-center justify-content-center" href="{{ route('login') }} ">Sign-In</a>
                     </div>
                 </form>
 
@@ -48,7 +48,7 @@
             <p class="txt-h1 pt-5">We are a website <br />that hosts your portfolio</p>
             <p class="text-center text-white fs-4 ">Showcase Your Brilance</p>
             <div class="d-flex justify-content-center align-items-center gap-2">
-                <a class="btn-explore d-flex align-items-center text-decoration-none " href="{{ url('detail') }}">
+                <a class="btn-explore d-flex align-items-center text-decoration-none " href="{{ route('detail') }}">
                     Explore Now
                     <img src="{{ url('images/arrow.png') }}" alt="Arrow Icon" class="ms-2">
                 </a>

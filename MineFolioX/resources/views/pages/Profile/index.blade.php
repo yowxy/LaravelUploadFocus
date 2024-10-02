@@ -34,7 +34,7 @@
                 <div id="edit-profile" class="text-center pt-1 fw-medium justify-content-center me-3">
                     Edit Profile
                 </div>
-                <a id="edit-profile1" class="text-center pt-1 fw-medium justify-content-center"  href="{{ url('profile/upload') }}">
+                <a id="edit-profile1" class="text-center pt-1 fw-medium justify-content-center"  href="{{ route('profile.upload') }}">
                     Upload Portofolio
                 </a>
             </div>
@@ -51,7 +51,7 @@
                             ever since the 1500s, when an unknown printer took a galley of type <br>
                             and scrambled it to make a type specimen book. <br>
                         </p>
-                        <a href="{{ url('profile/detail') }}" class="btn-seedetail">See detail</a>
+                        <a href="{{   route('profile.detail') }}" class="btn-seedetail">See detail</a>
                     </div>
 
                     <div class="card-Detail">
@@ -61,7 +61,7 @@
                             ever since the 1500s, when an unknown printer took a galley of type <br>
                             and scrambled it to make a type specimen book. <br>
                         </p>
-                        <a href="{{ url('profile/detail') }}" class="btn-seedetail">See detail</a>
+                        <a href="{{   route('profile.detail') }}" class="btn-seedetail">See detail</a>
                     </div>
                 </div>
 
@@ -73,7 +73,7 @@
                             ever since the 1500s, when an unknown printer took a galley of type <br>
                             and scrambled it to make a type specimen book. <br>
                         </p>
-                        <a href="{{ url('profile/detail') }}" class="btn-seedetail">See detail</a>
+                        <a href="{{ route('profile.detail') }}" class="btn-seedetail">See detail</a>
                     </div>
 
                     <div class="card-Detail">
@@ -83,7 +83,7 @@
                             ever since the 1500s, when an unknown printer took a galley of type <br>
                             and scrambled it to make a type specimen book. <br>
                         </p>
-                        <a href="{{ url('profile/detail') }}" class="btn-seedetail">See detail</a>
+                        <a href="{{ route('profile.detail') }}" class="btn-seedetail">See detail</a>
                     </div>
 
                 </div>
