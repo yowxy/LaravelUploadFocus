@@ -22,20 +22,28 @@
     {{-- Navbar --}}
     <nav class="navbar navbar-expand-lg bg-transparent">
         <div class="container mx-auto">
-            <a class="txt-a">MineFolioX</a>
-            <div class="d-flex w-100 justify-content-center">
+            <!-- Brand Name -->
+            <a class="navbar-brand txt-a fs-1 ">MineFolioX</a>
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <!-- Navigation content -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+
                 <form class="d-flex justify-content-center align-items-center" role="search">
                     <div class="search-container d-flex align-items-center position-relative">
                         <img src="{{ url('images/search.png') }}" alt="Search Icon" class="search-icon">
-                        <input class="input-search mx-2" type="search" placeholder="Search Your Portofolio"
+                        <input class="input-search mx-2" type="search" placeholder="Search Your Portfolio"
                             aria-label="Search">
                     </div>
                     <div class="d-flex">
-                        <a class="btn-sign-in mx-2 px-2 text-decoration-none text-center justify-content-center" href="{{ route('register') }} ">Sign-Up</a>
-                        <a class="btn-sign-in mx-2 px-2 text-decoration-none text-center justify-content-center" href="{{ route('login') }} ">Sign-In</a>
+                        <a class="btn-sign-in mx-2 px-2 text-decoration-none text-center justify-content-center"
+                            href="{{ route('register') }}">Sign-Up</a>
+                        <a class="btn-sign-in mx-2 px-2 text-decoration-none text-center justify-content-center"
+                            href="{{ route('login') }}">Sign-In</a>
                     </div>
                 </form>
-
             </div>
         </div>
     </nav>
