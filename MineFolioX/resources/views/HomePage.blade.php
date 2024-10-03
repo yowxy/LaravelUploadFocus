@@ -41,7 +41,7 @@
                         <a class="btn-sign-in mx-2 px-2 text-decoration-none text-center justify-content-center"
                             href="{{ route('register') }}">Sign-Up</a>
                         <a class="btn-sign-in mx-2 px-2 text-decoration-none text-center justify-content-center"
-                            href="{{ route('login') }}">Sign-In</a>
+                            href="{{ route('pages.login') }}">Sign-In</a>
                     </div>
                 </form>
             </div>

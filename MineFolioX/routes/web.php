@@ -20,9 +20,11 @@ Route::get('/', function () {
     return view('HomePage');
 })->name('home');
 
-Route::get('login', function(){
-    return view('pages.login');
-})->name('login');
+Route::namespace('App\Http\Controllers\Auth')->group(function(){
+    Route::get('login', 'AuthController@index')->name('pages.login');
+});
+
+
 
 
 Route::get('register', function(){
@@ -63,10 +65,5 @@ Route::get('profile/edit', function() {
 
 // Route::get('login', [AuthController::class, 'index']);
 // Route::get('register', [RegisterController::class, 'index']);
-Route::namespace('App\Http\Controllers')->group(function(){
-    // Route::get('detail/show',[DetailController::class,'index']);
-    // Route::get('profile',[ProfileController::class, 'index']);
-    // Route::get('profile/detail', [ProfileController::class ,'show']);
-    // Route::get('profile/upload', [ProfileController::class ,'form']);
-});
+
 // Route::get('detail',[DetailController::class, 'show']);
