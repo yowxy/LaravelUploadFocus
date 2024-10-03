@@ -44,7 +44,7 @@
                             <input type="password" placeholder="pastikan passwordnya sudah di isi terlebih dahulu yah" >
                         </div>
                         <div class="mt-5 border btnSave  text-center mx-auto ">
-                            <a href="" class="text-decoration-none text-white " >Save My Profile</a>
+                            <a href="" class="text-decoration-none text-white ">Save My Profile</a>
                         </div>
                     </form>
                 </div>

@@ -39,6 +39,10 @@ Route::get('detail', function(){
     return view('pages.Explore.detail');
 })->name('detail');
 
+Route::get('edit', function(){
+    return view('pages.Explore.edit');
+})->name('edit.porto');
+
 
 Route::get('profile', function(){
     return view('pages.Profile.index');

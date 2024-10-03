@@ -1,0 +1,100 @@
+*{
+    font-family: 'Poppins';
+}
+
+.PortoEdit h1 {
+    font-size: 64px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    margin-top: 155px;
+}
+
+.cardPorto {
+    font-family: 'Poppins';
+}
+
+.cardPorto input {
+    width: 630px;
+    height: 88px;
+    background-color: #333333;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+}
+
+.cardPorto2 {
+    font-family: 'Poppins';
+    margin-top: 10px;
+}
+
+.cardPorto2 input {
+    width: 630px;
+    height: 88px;
+    background-color: #333333;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+}
+
+.cardPorto2 ::placeholder {
+    color:  #fff; /* Light gray placeholder text */
+    opacity: 1;  /* Ensures placeholder visibility */
+}
+
+.cardPorto ::placeholder {
+    color:  #fff; /* Light gray placeholder text */
+    opacity: 1;  /* Ensures placeholder visibility */
+}
+
+
+.cardPorto2 h1 {
+    margin-top: 25px;
+}
+
+.cardPorto3 {
+    font-family: 'Poppins';
+    margin-top: 10px;
+}
+
+.cardPorto3 h1 {
+    font-family: 'Poppins';
+    margin-top: 25px;
+}
+
+.custom-textarea {
+    width: 630px;
+    height: 422px;
+    background-color: #333333;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    padding: 10px; /* Optional: adds some inner padding */
+    font-size: 16px; /* Optional: adjust the font size */
+    resize: none; /* Optional: prevents resizing of the textarea */
+}
+
+
+.custom-textarea::placeholder {
+    padding-top: 20px;
+    padding-left: 20px;
+    color:  #fff; /* Light gray placeholder text */
+    opacity: 1;  /* Ensures placeholder visibility */
+}
+
+.custom-textarea1  {
+    width: 630px;
+    height: 422px;
+    background-color: #333333;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    padding: 10px; /* Optional: adds some inner padding */
+    font-size: 16px; /* Optional: adjust the font size */
+    resize: none; /* Optional: prevents resizing of the textarea */
+}
+
+
+.cardPorto4 h1 {
+    font-family: 'Poppins';
+    margin-top: 20px;
+}
