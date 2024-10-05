@@ -52,6 +52,7 @@
                             and scrambled it to make a type specimen book. <br>
                         </p>
                         <a href="{{   route('profile.detail') }}" class="btn-seedetail">See detail</a>
+                        <a href="{{   route('profile.detail') }}" class="card-edit">Edit</a>
                     </div>
 
                     <div class="card-Detail">
@@ -95,7 +96,7 @@
             </div>
     </section>
 
-    @include('components.footer');
+    @include('components.footer')
 </body>
 
 </html>
