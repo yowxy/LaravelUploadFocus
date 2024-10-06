@@ -1,8 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.css";
+// import "swiper/swiper-bundle.css";
 import CategoryCard from "../components/CategoryCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Category } from "../types/type";
 
 export default function CategoryWrapper() {
 
@@ -45,21 +46,13 @@ export default function CategoryWrapper() {
             slidesOffsetBefore={20}
             slidesOffsetAfter={20}
           >
-            <SwiperSlide className="!w-fit pb-[30px]">
-              <CategoryCard />
+
+            {categories.map((category) =>(
+            <SwiperSlide key={category.id} className="!w-fit pb-[30px]">
+              <CategoryCard  category={category}/>
             </SwiperSlide>
-            <SwiperSlide className="!w-fit pb-[30px]">
-              <CategoryCard />
-            </SwiperSlide>
-            <SwiperSlide className="!w-fit pb-[30px]">
-              <CategoryCard />
-            </SwiperSlide>
-            <SwiperSlide className="!w-fit pb-[30px]">
-              <CategoryCard />
-            </SwiperSlide>
-            <SwiperSlide className="!w-fit pb-[30px]">
-              <CategoryCard />
-            </SwiperSlide>
+            ))}
+
           </Swiper>
         </div>
       </section>
