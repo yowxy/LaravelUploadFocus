@@ -6,7 +6,7 @@ export interface Recipe {
     url_video: string,
     author: Author,
     category: Category,
-    thumbnails: string,
+    thumbnail: string,
     tutorials: Tutorial[],
     recipe_ingredients: RecipeIngredient[],
     about: string,
