@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 Route::namespace('App\Http\Controllers\Auth')->group(function(){
     Route::get('login', 'AuthController@index')->name('pages.login');
+    Route::post('login', 'AuthController@login')->name('pages.loginn');
 });
 
 
