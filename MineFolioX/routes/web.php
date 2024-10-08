@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController as AuthAuthController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\ProfileController;
@@ -20,9 +21,10 @@ Route::get('/', function () {
     return view('HomePage');
 })->name('home');
 
-Route::namespace('App\Http\Controllers\Auth')->group(function(){
+Route::namespace('App\Http\Controllers\Auth')->group(function() {
     Route::get('login', 'AuthController@index')->name('pages.login');
     Route::post('login', 'AuthController@login')->name('pages.loginn');
+    // Route::post('logout', 'AuthController@logout')->name('pages.logout');
 });
 
 

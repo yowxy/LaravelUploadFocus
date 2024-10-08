@@ -26,4 +26,10 @@ class AuthController extends Controller
         return redirect()->back()->withInput()
             ->withErrors(['credentials' => 'the email or password is wrong' ]);
     }
+
+    // public function logout() {
+    //     Auth::logout();
+    //     return redirect()->route('home');
+    // }
+
 }
