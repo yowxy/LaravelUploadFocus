@@ -62,8 +62,7 @@ export default function CategoryFeaturedRecipesWrapper() {
                 >
                     {category.recipes.map((recipe) => (
                         <SwiperSlide key={recipe.id} className="!w-fit">
-                            <FeaturedRecipeCard recipe={recipe} />
-                         
+                            <FeaturedRecipeCard recipe={recipe} />  
                         </SwiperSlide>
                     ))}
                 </Swiper>
