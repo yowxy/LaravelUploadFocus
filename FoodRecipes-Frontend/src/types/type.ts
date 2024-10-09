@@ -7,7 +7,7 @@ export interface Recipe {
     author: Author,
     category: Category,
     thumbnail: string,
-    photos: Photo[],
+    photos: Photo [],
     tutorials: Tutorial[],
     recipe_ingredients: RecipeIngredient[],
     about: string,

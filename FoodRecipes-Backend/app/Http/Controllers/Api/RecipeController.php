@@ -16,13 +16,18 @@ class RecipeController extends Controller
     return RecipeResource::collection($recipes);
 }
 
-
 public function show(Recipe $recipe)
 {
-    // Eager load relationships for the single recipe
-    $recipe->load(['category', 'recipeIngredients', 'photos', 'tutorials', 'author']);
+    // Eager load the relationships, including 'recipeIngredients.ingredient'
+    $recipe->load([
+        'category',
+        'recipeIngredients.ingredient', // Load recipe ingredients with their associated ingredient
+        'photos',
+        'tutorials',
+        'author'
+    ]);
 
-    // Return the recipe resource
+    // Return the recipe as a resource
     return new RecipeResource($recipe);
 }
 

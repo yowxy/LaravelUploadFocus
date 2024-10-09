@@ -52,6 +52,8 @@ export default function RecipeDetails() {
 
 
         const baseUrl = 'http://127.0.0.1:8000/storage';
+        console.log('okndsf', recipe);
+
 
 
 
@@ -285,19 +287,15 @@ export default function RecipeDetails() {
             aria-labelledby="ingredients-tab"
           >
             <div className="grid grid-cols-2 gap-5">
-            {recipe.recipe_ingredients.map((recipeIngredients, index) => (
+            {recipe.recipe_ingredients.map((recipeIngredients) => (
           
-
-                <div
-                    key={index}
-                    className="flex flex-col items-center text-center w-full rounded-[20px] p-[14px] gap-[14px] bg-white shadow-[0_12px_30px_0_#D6D6D680]"
+                <div key={recipeIngredients.id} className="flex flex-col items-center text-center w-full rounded-[20px] p-[14px] gap-[14px] bg-white shadow-[0_12px_30px_0_#D6D6D680]"
                 >
                     <div className="thumbnail flex shrink-0 w-full aspect-[138.5/100] rounded-[20px] bg-[#D9D9D9] overflow-hidden">
-                    {recipeIngredients.ingredient?.photo ? (
+                    {recipeIngredients.ingredient.photo ? (
                         <img
                         src={`${baseUrl}/${recipeIngredients.ingredient.photo}`}
                         className="w-full h-full object-cover"
-                        alt={recipeIngredients.ingredient.name }
                         />
                     ) : (
                         <div className="w-full h-full bg-gray-200 flex items-center justify-center">
@@ -306,7 +304,7 @@ export default function RecipeDetails() {
                     )}
                     </div>
                     <div className="flex flex-col gap-[2px]">
-                    <p className="font-semibold">{recipeIngredients.ingredient?.name || 'Unknown Ingredient'}</p>
+                    <p className="font-semibold">{recipeIngredients.ingredient.name || 'Unknown Ingredient'}</p>
                     <p className="text-sm leading-[21px] text-[#848486]">1 kilogram</p>
                     </div>
                 </div>

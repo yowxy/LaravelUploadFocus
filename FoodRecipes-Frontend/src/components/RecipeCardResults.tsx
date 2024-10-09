@@ -7,7 +7,7 @@ export default function RecipeCardResults({recipe}:RecipeCardResultsProps) {
 
     return (
         <>
-               <a href="details.html" className="card">
+               <div className="card">
             <div className="flex rounded-[20px] p-[14px] gap-[14px] bg-white shadow-[0_12px_30px_0_#D6D6D640] transition-all duration-300 hover:shadow-[0_10px_20px_0_#FF4C1C80]">
               <div className="flex shrink-0 w-[100px] h-20 rounded-[20px] overflow-hidden bg-[#D9D9D9]">
                 <img
@@ -37,7 +37,7 @@ export default function RecipeCardResults({recipe}:RecipeCardResultsProps) {
                 </p>
               </div>
             </div>
-          </a>
+          </div>
         </>
     );
 }
