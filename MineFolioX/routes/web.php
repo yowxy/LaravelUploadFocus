@@ -21,17 +21,18 @@ Route::get('/', function () {
     return view('HomePage');
 })->name('home');
 
+
 Route::namespace('App\Http\Controllers\Auth')->group(function() {
     // Login routes
     Route::get('login', 'AuthController@index')->name('pages.login');
     Route::post('login', 'AuthController@login')->name('pages.loginn');
-    Route::post('logout', 'AuthController@logout')->name('logout'); 
+    Route::post('logout', 'AuthController@logout')->name('pages.logout'); 
 
 
 
     // Register routes
     Route::get('register', 'RegisterController@show')->name('pages.register');
-    Route::post('register', 'RegisterController@signUp')->name('pages.register');
+    Route::post('register', 'RegisterController@signUp')->name('pages.registerr');
 });
 
 

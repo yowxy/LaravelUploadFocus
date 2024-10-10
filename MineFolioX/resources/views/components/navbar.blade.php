@@ -31,13 +31,13 @@
                                 <a class="dropdown-item" href="">My Profile</a>
                             </li>
                             <li>
-                                <form action="{{ route('logout') }}" method="POST">
+                                <form action="{{ route('pages.logout') }}" method="POST">
                                     @csrf
                                     <button type="submit" class="dropdown-item">Log out</button>
                                 </form>
-                                
                             </li>
                         </ul>
+                        
                     </li>
                     @endauth
                 </ul>

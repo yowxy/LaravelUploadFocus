@@ -22,7 +22,7 @@
         <img src="{{ url('images/work11.png') }}" alt="" class="img-work">
         <div class="MineFolioX-input-bawah">
 
-            <form action="{{ route('pages.register') }}" method="POST">
+            <form action="{{ route('pages.registerr') }}" method="POST">
                 @csrf
                 <div style="width: 463px; height: 118px; left: 0px; top: 131px; position: absolute">
                     <label class="">Email</label>
