@@ -104,7 +104,9 @@ export default function SearchDetails() {
 
           {searchResults.length > 0 ? (
             searchResults.map((recipe) => (
-              <RecipeCardResults key={recipe.id} recipe={recipe} ></RecipeCardResults>
+              <Link to={`/recipe/${recipe.slug}`} key={recipe.id}>
+                <RecipeCardResults recipe={recipe} ></RecipeCardResults>
+              </Link>
 
             ))) : (<p>Belum Ada Recipe Terkait</p>)
           
