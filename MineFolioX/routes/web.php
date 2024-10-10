@@ -20,20 +20,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('HomePage');
 })->name('home');
-
 Route::namespace('App\Http\Controllers\Auth')->group(function() {
+    // Login routes
     Route::get('login', 'AuthController@index')->name('pages.login');
     Route::post('login', 'AuthController@login')->name('pages.loginn');
     // Route::post('logout', 'AuthController@logout')->name('pages.logout');
+
+    // Register routes
     Route::get('register', 'RegisterController@show')->name('pages.register');
+    Route::post('register', 'RegisterController@signUp')->name('pages.register');
 });
 
 
 
 
-Route::get('register', function(){
-    return view('pages.register');
-})->name('register');
+
+// Route::get('register', function(){
+//     return view('pages.register');
+// })->name('register');
 
 
 Route::get('detail/show', function(){

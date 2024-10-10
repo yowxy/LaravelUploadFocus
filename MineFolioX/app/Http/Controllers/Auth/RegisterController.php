@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth; // Ubah namespace di sini
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,22 +15,30 @@ class RegisterController extends Controller
      */
     public function show()
     {
-        return view ('pages.register');
+        return view('pages.register');
     }
 
+    public function signUp(RegisterRequest $request)
+    {
+        // Validate and retrieve the validated data
+        $validated = $request->validated();
 
-    public function  signUp(SignUpRequest $request){
-        $validated = $request->$validated();
+        // Hash the password before saving
         $validated['password'] = bcrypt($validated['password']);
-        $validated['picture'] = config('app.avatar_generator_ur').$validated['username'];
 
-        $create = User::create($validated);
+        // Optionally generate a picture or avatar based on the name
+        $validated['picture'] = config('app.avatar_generator_url') . $validated['name'];
 
-          if($create) {
-            Auth::login($create);
-            return redirect()->route('home');
-          }
+        // Create the new user
+        $user = User::create($validated);
 
-          return abort(500);
+        // If user creation is successful, log in the user
+        if ($user) {
+            Auth::login($user);
+            return redirect()->route('home'); // Redirect to home after successful registration
+        }
+
+        // If something goes wrong, abort with a 500 error
+        return abort(500);
     }
 }

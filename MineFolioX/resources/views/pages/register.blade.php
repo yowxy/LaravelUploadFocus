@@ -21,25 +21,35 @@
     <div class="MineFolioX-input">
         <img src="{{ url('images/work11.png') }}" alt="" class="img-work">
         <div class="MineFolioX-input-bawah">
-            <div style="width: 463px; height: 118px; left: 0px; top: 131px; position: absolute">
-                <p class="register-name-email" >Email</p>
-                <input type="email"  class="register-input-email" placeholder="Pastikan email telah di inputkan" ></input>
-            </div>
-            <div style="width: 463px; height: 118px; left: 0px; top: 0px; position: absolute">
-                <p class="register-name" >Name</p>
-                <input class="register-input-name" type="text" placeholder="Pastikan nama nya telah di isi" ></input>
-            </div>
-            <div style="width: 463px; height: 128px; left: 0px; top: 262px; position: absolute">
-                <p class="register-password" >Password</p>
-                <input type="password" class="register-input-password" placeholder="Pastikan password nya telah di isi " ></input>
-            </div>
-            <div style="width: 463px; height: 128px; left: 0px; top: 403px; position: absolute">
-                <p class="register-confirm-password">Confirm Password</p>
-                <input class="register-input-pw" type="password" placeholder="Pastikan password yang di input sama " ></input>
-            </div>
-            <div style="width: 463px; height: 73px; left: 0px; top: 590px; position: absolute">
-                <button  class="btn-register  ">Register</button>
-            </div>
+
+            <form action="{{ route('pages.register') }}" method="POST">
+                @csrf
+                <div style="width: 463px; height: 118px; left: 0px; top: 131px; position: absolute">
+                    <p class="register-name-email">Email</p>
+                    <input type="email" name="email" class="register-input-email" placeholder="Pastikan email telah di inputkan">
+                </div>
+
+                <div style="width: 463px; height: 118px; left: 0px; top: 0px; position: absolute">
+                    <p class="register-name">Name</p>
+                    <input type="text" name="name" class="register-input-name" placeholder="Pastikan nama nya telah di isi">
+                </div>
+
+                <div style="width: 463px; height: 128px; left: 0px; top: 262px; position: absolute">
+                    <p class="register-password">Password</p>
+                    <input type="password" name="password" class="register-input-password" placeholder="Pastikan password nya telah di isi">
+                </div>
+
+                <div style="width: 463px; height: 128px; left: 0px; top: 403px; position: absolute">
+                    <p class="register-confirm-password">Confirm Password</p>
+                    <input type="password" name="password_confirmation" class="register-input-pw" placeholder="Pastikan password yang di input sama">
+                </div>
+
+                <div style="width: 463px; height: 73px; left: 0px; top: 590px; position: absolute">
+                    <button class="btn-register">Register</button>
+                </div>
+
+            </form>
+
         </div>
         <div style="width: 329px; height: 122px; left: 798px; top: 0px; position: absolute">
             <h1 class="txt-MineFolioX">MineFolioX</h1>
