@@ -25,23 +25,50 @@
             <form action="{{ route('pages.register') }}" method="POST">
                 @csrf
                 <div style="width: 463px; height: 118px; left: 0px; top: 131px; position: absolute">
-                    <p class="register-name-email">Email</p>
-                    <input type="email" name="email" class="register-input-email" placeholder="Pastikan email telah di inputkan">
+                    <label class="">Email</label>
+                    <input type="email" name="email" class="register-input-email  @error('email') is-invalid  @enderror  " placeholder="Pastikan email telah di inputkan" 
+                    autocomplete="off"  value="{{ old('email') }}" >
+
+                    @error('email')
+                        <div class="invalid-feedback" >{{ $message }}</div>
+                    @enderror
+
                 </div>
 
                 <div style="width: 463px; height: 118px; left: 0px; top: 0px; position: absolute">
-                    <p class="register-name">Name</p>
-                    <input type="text" name="name" class="register-input-name" placeholder="Pastikan nama nya telah di isi">
+                    <label class="">Name</label>
+                    <input type="text" name="name" class="register-input-name     @error('name') is-invalid  @enderror      " placeholder="Pastikan nama nya telah di isi"  
+                    autocomplete="off"  value="{{ old('name') }}" >
+
+                    @error('name')
+                    <div class="invalid-feedback" >{{ $message }}</div>
+                    @enderror
+
+
                 </div>
 
                 <div style="width: 463px; height: 128px; left: 0px; top: 262px; position: absolute">
-                    <p class="register-password">Password</p>
-                    <input type="password" name="password" class="register-input-password" placeholder="Pastikan password nya telah di isi">
+                    <label class="">Password</label>
+                    <input type="password" name="password" class="register-input-password      @error('password') is-invalid  @enderror        " placeholder="Pastikan password nya telah di isi" 
+                    autocomplete="off" >
+
+                    @error('password')
+                        <div class="invalid-feedback" >{{ $message }}</div>
+                    @enderror
+
+
                 </div>
 
                 <div style="width: 463px; height: 128px; left: 0px; top: 403px; position: absolute">
-                    <p class="register-confirm-password">Confirm Password</p>
-                    <input type="password" name="password_confirmation" class="register-input-pw" placeholder="Pastikan password yang di input sama">
+                    <label class="">Confirm Password</label>
+                    <input type="password" name="password_confirmation" class="register-input-pw     @error('password_confirmation') is-invalid  @enderror   "placeholder="Pastikan password yang di input sama" 
+                    autocomplete="off">
+
+                    @error('password_confirmation')
+                        <div class="invalid-feedback" >{{ $message }}</div>
+                    @enderror
+
+
                 </div>
 
                 <div style="width: 463px; height: 73px; left: 0px; top: 590px; position: absolute">

@@ -31,10 +31,11 @@
                                 <a class="dropdown-item" href="">My Profile</a>
                             </li>
                             <li>
-                                <form action="" method="POST">
+                                <form action="{{ route('logout') }}" method="POST">
                                     @csrf
                                     <button type="submit" class="dropdown-item">Log out</button>
                                 </form>
+                                
                             </li>
                         </ul>
                     </li>
