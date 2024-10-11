@@ -24,12 +24,22 @@
                                 <img src="{{ filter_var(auth()->user()->picture, FILTER_VALIDATE_URL) ? auth()->user()->picture : Storage::url(auth()->user()->picture) }}"
                                      alt="{{ auth()->user()->name }}" class="avatar rounded-circle">
                             </div>
-                            <span class="fw-bold">{{ auth()->user()->name }}</span>
+
+                            <div class="text-left ">
+                                <span class="fw-bold">{{ auth()->user()->name }}</span>
+                                <br>
+                                <div class="d-flex" >
+                                        <span class="me-1" >Lihat</span>
+                                        <span>Profile</span>
+                                </div>
+                            </div>
+
                         </a>
                         <ul class="dropdown-menu mt-2">
                             <li>
-                                <a class="dropdown-item" href="{{ route('pages.Profile.index') }}">My Profile</a>
+                                <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a>
                             </li>
+
                             <li>
                                 <form action="{{ route("pages.logout") }}" method="POST">
                                     @csrf

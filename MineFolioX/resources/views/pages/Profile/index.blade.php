@@ -14,16 +14,19 @@
 </head>
 
 <body>
-    @include('components.profile')
+    @include('components.navbar')
 
-    
+
 
     <section id="profile">
         <div class="container">
             <div class="d-flex">
-                <img src="{{ url('images/profile-4.png') }}" alt="Profile-4" class="img-profile">
+
+                <img src="{{ filter_var(auth()->user()->picture, FILTER_VALIDATE_URL) ? auth()->user()->picture : Storage::url(auth()->user()->picture) }}"
+                alt="{{ auth()->user()->name }}" class="avatar rounded-circle ">
+
                 <div class="card-profile">
-                    <h1>Alexander Jayjo</h1>
+                    <h1>{{ auth()->user()->name }}</h1>
                     <p class="m-0">Software Engginer</p>
                     <p class="txt-description mb-7 ">Lorem Ipsum is simply dummy text of the printing and typesetting
                         industry. <br>
