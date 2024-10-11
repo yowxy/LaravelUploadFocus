@@ -26,7 +26,7 @@
                 @csrf
                 <div style="width: 463px; height: 118px; left: 0px; top: 131px; position: absolute">
                     <label class="">Email</label>
-                    <input type="email" name="email" class="register-input-email  @error('email') is-invalid  @enderror  " placeholder="Pastikan email telah di inputkan" 
+                    <input type="email" name="email" class="register-input-email  @error('email') is-invalid  @enderror  " placeholder="Pastikan email telah di inputkan"
                     autocomplete="off"  value="{{ old('email') }}" >
 
                     @error('email')
@@ -37,7 +37,7 @@
 
                 <div style="width: 463px; height: 118px; left: 0px; top: 0px; position: absolute">
                     <label class="">Name</label>
-                    <input type="text" name="name" class="register-input-name     @error('name') is-invalid  @enderror      " placeholder="Pastikan nama nya telah di isi"  
+                    <input type="text" name="name" class="register-input-name     @error('name') is-invalid  @enderror      " placeholder="Pastikan nama nya telah di isi"
                     autocomplete="off"  value="{{ old('name') }}" >
 
                     @error('name')
@@ -49,7 +49,7 @@
 
                 <div style="width: 463px; height: 128px; left: 0px; top: 262px; position: absolute">
                     <label class="">Password</label>
-                    <input type="password" name="password" class="register-input-password      @error('password') is-invalid  @enderror        " placeholder="Pastikan password nya telah di isi" 
+                    <input type="password" name="password" class="register-input-password      @error('password') is-invalid  @enderror   " placeholder="Pastikan password nya telah di isi"
                     autocomplete="off" >
 
                     @error('password')
@@ -61,7 +61,7 @@
 
                 <div style="width: 463px; height: 128px; left: 0px; top: 403px; position: absolute">
                     <label class="">Confirm Password</label>
-                    <input type="password" name="password_confirmation" class="register-input-pw     @error('password_confirmation') is-invalid  @enderror   "placeholder="Pastikan password yang di input sama" 
+                    <input type="password" name="password_confirmation" class="register-input-pw     @error('password_confirmation') is-invalid  @enderror   "placeholder="Pastikan password yang di input sama"
                     autocomplete="off">
 
                     @error('password_confirmation')

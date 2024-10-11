@@ -16,6 +16,8 @@
 <body>
     @include('components.profile')
 
+    
+
     <section id="profile">
         <div class="container">
             <div class="d-flex">

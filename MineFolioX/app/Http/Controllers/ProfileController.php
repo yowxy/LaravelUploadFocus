@@ -10,11 +10,5 @@ class ProfileController extends Controller
         return view ('pages.Profile.index');
     }
 
-    public function show(){
-        return view('pages.Profile.show');
-    }
-
-    public function form() {
-        return view('pages.Profile.form');
-    }
 }
+

@@ -19,7 +19,9 @@
     <nav id="MineFolioX">
         <a class="navbar-brand" href="{{ url('/') }}"  >MineFolioX</a>
     </nav>
-    <form action="{{ route('pages.loginn') }}" method="POST" >
+
+
+    <form action="{{ route('pages.login.post') }}" method="POST" >
         @csrf
         <div class="MineFolioX-input">
             <img src="{{ url('images/orang kantoran.png') }}" alt="" class="img-work" >
