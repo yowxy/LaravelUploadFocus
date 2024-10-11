@@ -13,7 +13,11 @@ export default function CategoryWrapper() {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/categories')
+        axios.get('http://127.0.0.1:8000/api/categories' , {
+          headers: {
+            'X-API-KEY': 'dahcyodhasdapppsd'
+          }
+        } )
             .then(response => {
                 setCategories(response.data.data);
                 setLoading(false);

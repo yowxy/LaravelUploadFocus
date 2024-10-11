@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\ApiKey;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,6 +16,14 @@ class CheckApiKey
      */
     public function handle(Request $request, Closure $next): Response
     {
+
+        $apikey = $request ->header('X-API-KEY');
+
+
+        if(!$apikey || !ApiKey::where('key',$apikey)->exists()){
+            return response()->json(['message' => 'Unauthorized' ],401);
+        }
+
         return $next($request);
     }
 }
