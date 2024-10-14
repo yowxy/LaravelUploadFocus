@@ -13,8 +13,11 @@ class PortofolioUpload extends Controller
      */
     public function index()
     {
-        //
+        $portfolios = Portofolio::where('user_id', auth()->id())->get();
+
+        return view('pages.Profile.index', compact('portfolios')); // pastikan variabel 'portfolios'
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -43,6 +46,7 @@ class PortofolioUpload extends Controller
 
         return redirect()->route('profile')->with('success', 'Portofolio berhasil ditambahkan!');
     }
+
 
 
     /**

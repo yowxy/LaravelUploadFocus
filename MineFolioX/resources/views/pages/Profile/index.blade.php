@@ -14,96 +14,59 @@
 </head>
 
 <body>
+    <!-- Navbar -->
     @include('components.navbar')
 
-
-
+    <!-- Profile Section -->
     <section id="profile">
         <div class="container">
-            <div class="d-flex">
-
+            <div class="d-flex align-items-center mb-4">
                 <img src="{{ filter_var(auth()->user()->picture, FILTER_VALIDATE_URL) ? auth()->user()->picture : Storage::url(auth()->user()->picture) }}"
-                alt="{{ auth()->user()->name }}" class="avatar rounded-circle ">
+                alt="{{ auth()->user()->name }}" class="avatar rounded-circle">
 
-                <div class="card-profile">
+                <div class="card-profile ms-3">
                     <h1>{{ auth()->user()->name }}</h1>
-                    <p class="m-0">Software Engginer</p>
-                    <p class="txt-description mb-7 ">Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. <br>
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an <br>
-                        unknown printer took a galley of type and scrambled it to make a type specimen book. <br>
+                    <p class="m-0">Software Engineer</p>
+                    <p class="txt-description mb-4">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br>
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                     </p>
                 </div>
             </div>
-            <div class="d-flex">
-                <div id="edit-profile" class="text-center pt-1 fw-medium justify-content-center me-3">
+
+            <!-- Edit and Upload Actions -->
+            <div class="d-flex mb-5">
+                <div id="edit-profile" class="text-center pt-1 fw-medium me-3">
                     Edit Profile
                 </div>
-                <a id="edit-profile1" class="text-center pt-1 fw-medium justify-content-center"  href="{{ route('profile.upload') }}">
-                    Upload Portofolio
+                <a id="edit-profile1" class="text-center pt-1 fw-medium" href="{{ route('profile.upload') }}">
+                    Upload Portfolio
                 </a>
             </div>
 
+            <!-- Portfolio Section -->
             <div id="My-Portofolio">
+                <h1 class="text-center mb-4">My Portfolio</h1>
 
-                <h1 class="text-center">My Portofolio</h1>
-
-                <div class="d-flex">
-                    <div class="card-Detail me-4">
-                        <h1>How To Create Website in 1 Hour</h1>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br>
-                            industry. Lorem Ipsum has been the industry's standard dummy text <br>
-                            ever since the 1500s, when an unknown printer took a galley of type <br>
-                            and scrambled it to make a type specimen book. <br>
-                        </p>
-                        <a href="{{   route('profile.detail') }}" class="btn-seedetail">See detail</a>
-                        <a href="{{   route('profile.detail') }}" class="card-edit">Edit</a>
-                    </div>
-
-                    <div class="card-Detail">
-                        <h1>How To Create Website in 1 Hour</h1>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br>
-                            industry. Lorem Ipsum has been the industry's standard dummy text <br>
-                            ever since the 1500s, when an unknown printer took a galley of type <br>
-                            and scrambled it to make a type specimen book. <br>
-                        </p>
-                        <a href="{{   route('profile.detail') }}" class="btn-seedetail">See detail</a>
-                        <a href="{{   route('profile.detail') }}" class="card-edit">Edit</a>
-                    </div>
-                </div>
-
-                <div class="d-flex">
-                    <div class="card-Detail me-4">
-                        <h1>How To Create Website in 1 Hour</h1>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br>
-                            industry. Lorem Ipsum has been the industry's standard dummy text <br>
-                            ever since the 1500s, when an unknown printer took a galley of type <br>
-                            and scrambled it to make a type specimen book. <br>
-                        </p>
-                        <a href="{{ route('profile.detail') }}" class="btn-seedetail">See detail</a>
-                        <a href="{{   route('profile.detail') }}" class="card-edit">Edit</a>
-                    </div>
-
-                    <div class="card-Detail">
-                        <h1>How To Create Website in 1 Hour</h1>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br>
-                            industry. Lorem Ipsum has been the industry's standard dummy text <br>
-                            ever since the 1500s, when an unknown printer took a galley of type <br>
-                            and scrambled it to make a type specimen book. <br>
-                        </p>
-                        <a href="{{ route('profile.detail') }}" class="btn-seedetail">See detail</a>
-                        <a href="{{   route('profile.detail') }}" class="card-edit">Edit</a>
-                    </div>
-
+                <div class="d-flex flex-wrap justify-content-center">
+                    @foreach ($portfolios as $portfolio)
+                        <div class="card-Detail me-4 mb-4">
+                            <h1>{{ $portfolio->title }}</h1>
+                            <p>{{ $portfolio->description }}</p>
+                            <a href="{{ route('profile.detail', $portfolio->id) }}" class="btn-seedetail">See detail</a>
+                            <a href="{{ route('profile.edit', $portfolio->id) }}" class="card-edit">Edit</a>
+                        </div>
+                    @endforeach
                 </div>
 
                 <div>
-                    <h1 class="txt-akhir text-center" >Thank you For Visit My account</h1>
+                    <h1 class="txt-akhir text-center">Thank you for visiting my account</h1>
                 </div>
-
             </div>
+        </div>
     </section>
 
+    <!-- Footer -->
     @include('components.footer')
 </body>
 

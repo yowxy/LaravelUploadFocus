@@ -34,8 +34,8 @@ Route::namespace('App\Http\Controllers\Auth')->group(function() {
 });
 
 
-Route::get('profile',[ProfileController::class , 'index'])->name('profile');
-Route::post('profile',[ProfileController::class , 'index'])->name('profile.edit');
+Route::get('profile',[PortofolioUpload::class , 'index'])->name('profile');
+// Route::post('profile',[ProfileController::class , 'index'])->name('profile.edit');
 
 
 
