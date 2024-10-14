@@ -41,7 +41,7 @@ class PortofolioUpload extends Controller
             'user_id' => auth()->id(),
         ]);
 
-        return redirect()->route('home')->with('success', 'Portofolio berhasil ditambahkan!');
+        return redirect()->route('profile')->with('success', 'Portofolio berhasil ditambahkan!');
     }
 
 

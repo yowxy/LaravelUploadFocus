@@ -68,6 +68,7 @@
                             and scrambled it to make a type specimen book. <br>
                         </p>
                         <a href="{{   route('profile.detail') }}" class="btn-seedetail">See detail</a>
+                        <a href="{{   route('profile.detail') }}" class="card-edit">Edit</a>
                     </div>
                 </div>
 
@@ -80,6 +81,7 @@
                             and scrambled it to make a type specimen book. <br>
                         </p>
                         <a href="{{ route('profile.detail') }}" class="btn-seedetail">See detail</a>
+                        <a href="{{   route('profile.detail') }}" class="card-edit">Edit</a>
                     </div>
 
                     <div class="card-Detail">
@@ -90,6 +92,7 @@
                             and scrambled it to make a type specimen book. <br>
                         </p>
                         <a href="{{ route('profile.detail') }}" class="btn-seedetail">See detail</a>
+                        <a href="{{   route('profile.detail') }}" class="card-edit">Edit</a>
                     </div>
 
                 </div>
