@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\PortofolioUpload;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -10,6 +11,14 @@ Route::get('/', function () {
     return view('HomePage');
 })->name('home');
 
+
+
+Route::middleware('auth')->group(  function() {
+    Route::namespace('App\Http\Controllers')->group(function(){
+        Route::resource('portofolio', PortofolioUpload::class)
+            ->only(['create','store','edit','update','destroy']);
+    });
+});
 
 Route::namespace('App\Http\Controllers\Auth')->group(function() {
     // Login routes

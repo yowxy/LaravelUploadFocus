@@ -12,25 +12,45 @@
     <title>Document</title>
 </head>
 <body>
-    @include('components.profile')
+    @include('components.navbar')
 
     <section id="form-upload" >
         <div class="container" >
-            <div class="txt-upload" >
-                <h1>Title</h1>
-                <input type="text" class="input-upload" >
-            </div>
-            <div class="txt-upload1">
-                <h1>Name</h1>
-                <input type="text" class="input-upload" >
-            </div>
-            <div class="txt-upload1" >
-                <h1>Description</h1>
-                <input type="text" class="input-desc" >
-            </div>
-            <div class="a-Submitt" >
-                <a href="" class="a-submit">Submit</a>
-            </div>
+            <form action="{{ route('portofolio.store') }}" method="POST"  enctype="multipart/form-data"  >
+                @csrf
+                <div class="txt-upload">
+                    <h1 for="title">Title</h1>
+                    <input type="text" class="input-upload @error('title') is-invalid @enderror" name="title" required>
+                    @error('title')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="txt-upload1">
+                    <h1 for="name">Name</h1>
+                    <input type="text" class="input-upload @error('name') is-invalid @enderror" name="name" required>
+                    @error('name')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="txt-upload1">
+                    <h1>Description</h1>
+                    <textarea class="input-desc @error('description') is-invalid @enderror" name="description" required></textarea>
+                    @error('description')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="txt-upload1">
+                    <h1>Image</h1>
+                    <input type="file" class="input-upload @error('image_path') is-invalid @enderror" name="image_path" accept="image/" required>
+                    @error('image_path')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="a-Submitt">
+                    <button type="submit" class="a-submit">Submit</button>
+                </div>
+            </form>
+
         </div>
     </section>
 

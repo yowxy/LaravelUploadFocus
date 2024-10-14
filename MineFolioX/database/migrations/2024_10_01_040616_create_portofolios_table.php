@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('portofolios', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('name');
             $table->text('description');
             $table->string('image_path');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
