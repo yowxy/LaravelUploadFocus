@@ -48,6 +48,10 @@ Route::get('portofolios/{id}', [PortofolioUpload::class, 'show'])->name('pages.p
 // })->name('register');
 
 
+Route::get('detail/id', function(){
+    return view('pages.portofolio.edit');   
+})->name('pages.portofolio.edit');
+
 
 Route::get('detail/show', function(){
     return view('pages.Explore.index');

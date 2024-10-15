@@ -54,7 +54,7 @@
                             <h1>{{ $portfolio->title }}</h1>
                             <p class="border border-black ">{{ $portfolio->description }}</p>
                             <a href="{{ route('pages.profile.show', $portfolio->id) }}" class="btn-seedetail">See detail</a>
-                            <a href="{{ route('profile.edit', $portfolio->id) }}" class="card-edit">Edit</a>
+                            <a href="{{ route('pages.portofolio.edit', $portfolio->id) }}" class="card-edit">Edit</a>
                         </div>
                     @endforeach
                 </div>

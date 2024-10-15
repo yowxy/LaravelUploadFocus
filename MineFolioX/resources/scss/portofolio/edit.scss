@@ -1,0 +1,56 @@
+*{
+    font-family: 'Poppins';
+
+}
+
+
+.edt-porto {
+    margin-top: 115px;
+}
+
+.edt-porto h1 {
+    font-weight: 600;
+}
+
+.input-title {
+    width: 630px;
+    height: 88px;
+    background-color: #333333;
+    color: #fff;
+    border-radius: 10px;
+}
+
+
+input::placeholder {
+    color: #fff;
+}
+
+.textarea-porto {
+    padding: 25px;
+    width: 630px;
+    height: 422px;
+    background-color: #333333;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+}
+
+
+.input-file {
+    width: 630px;
+    height: 88px;
+    background-color: #333333;
+    border-radius: 10px;
+}
+
+.btn-cancel {
+    font-weight: 600;
+    font-family: 'Poppins';
+    font-size: 50px;
+    width: 346px;
+    height: 101px;
+    border-radius: 15px;
+    background-color: #FF6F61;
+    color: #fff;
+    border: none;
+}
