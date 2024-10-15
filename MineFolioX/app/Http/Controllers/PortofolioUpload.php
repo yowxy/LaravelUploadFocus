@@ -65,17 +65,38 @@ class PortofolioUpload extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $portofolio = Portofolio::findOrFail($id);
+
+        return view('pages.portofolio.edit', compact('portofolio'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(PortofolioRequest $request, string $id)
     {
-        //
+        $portofolio = Portofolio::findOrFail($id);
+
+        $validatedData = $request->validated();
+
+        if($request->hasFile('image_path')){
+            $imagePath = $request->file('image_path')->store('images/portofoliod', 'public');
+            $validatedData['image_path'] = $imagePath;
+        } else {
+            $validatedData ['image_path'] = $portofolio->image_path;
+        }
+
+        $portofolio->update([
+            'title' => $validatedData['title'],
+            'name' => $validatedData['name'],
+            'description' => $validatedData['image_path'],
+        ]);
+
+
+        return redirect()->route('profile')->with('success','portofolio berhasil di perbarui');
+
     }
 
     /**

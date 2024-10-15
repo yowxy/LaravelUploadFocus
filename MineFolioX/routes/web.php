@@ -39,6 +39,10 @@ Route::get('profile',[PortofolioUpload::class , 'index'])->name('profile');
 Route::get('portofolios/{id}', [PortofolioUpload::class, 'show'])->name('pages.profile.show');
 
 
+// Route::middleware('auth')->group(function(){
+
+// });
+
 
 
 
@@ -49,7 +53,7 @@ Route::get('portofolios/{id}', [PortofolioUpload::class, 'show'])->name('pages.p
 
 
 Route::get('detail/id', function(){
-    return view('pages.portofolio.edit');   
+    return view('pages.portofolio.edit');
 })->name('pages.portofolio.edit');
 
 

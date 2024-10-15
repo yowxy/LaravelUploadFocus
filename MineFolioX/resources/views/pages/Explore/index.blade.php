@@ -13,7 +13,7 @@
 <body>
     @include('components.navbar')
 
-    <section id="index-detailUser" >
+    <section id="index-detailUser" class="mb-4">
         <div class="container" >
             <div class="d-flex detail-Profile" >
                 <img src="{{ url('images/profile-2.png') }}" alt="Detail Profile" class="img-detailUser" >
@@ -46,9 +46,12 @@
                 </div>
             </div>
 
+            @guest
             <div id="txt-login" class="text-center " >
                 <p>Please To <a href="{{ url('login') }}" class="txt-sign-In" >sign-in </a> To create  <span class="txt-sign-In" >Portofolio</span></p>
             </div>
+            @endguest
+
 
 
         </div>

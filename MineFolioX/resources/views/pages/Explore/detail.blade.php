@@ -19,9 +19,12 @@
     <section id="txt-showPorto">
         <div class="container">
             <h1>Show Your Portofolio</h1>
+
+            @guest
             <div class="btn-loginCreate">
                 <a href="{{ url('login') }}" class="text-decoration-none text-white">Login To CreatePortofolio</a>
             </div>
+            @endguest
             {{-- yang bisa di tekan ke href cuman 1 aja hehehe --}}
             <a class="card-detail  row text-decoration-none" href="{{ url('detail/show') }}">
                 <div class="col-10">

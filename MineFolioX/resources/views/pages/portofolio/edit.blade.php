@@ -23,26 +23,30 @@
                     portofolio kita <br>
                 </p>
                 <div>
-                    <div class="" style="margin-top: 48px" >
-                        <h1 for="title" >Title</h1>
-                        <input type="text" class="input-title"  autocomplete="off" autofocus  placeholder="Pastikan Title telah di input dengan benar ">
-                    </div>
-                    <div>
-                        <h1 style="margin-top: 15px">Name</h1>
-                        <input type="text" class="input-title" autocomplete="off" autofocus placeholder="Pastikan Name telah di input dengan benar " >
-                    </div>
-                    <div>
-                        <h1 style="margin-top: 20px">Description</h1>
-                        <textarea name="" id="" class="textarea-porto"></textarea>
-                    </div>
-                    <div>
-                        <h1 style="margin-top: 87px" >Image</h1>
-                        <input type="file" class="input-file" name="image" accept="image/*" required>
-                    </div>
-                    <div class="a-Submitt d-flex  ">
-                        <button type="submit" class="a-submit me-3 ">Submit</button>
-                        <button type="submit" class="btn-cancel">Cancel</button>
-                    </div>
+                    <form action="">
+
+                        <div class="" style="margin-top: 48px" >
+                            <h1 for="title" >Title</h1>
+                            <input type="text" class="input-title"  autocomplete="off" autofocus  placeholder="Pastikan Title telah di input dengan benar ">
+                        </div>
+                        <div>
+                            <h1 style="margin-top: 15px">Name</h1>
+                            <input type="text" class="input-title" autocomplete="off" autofocus placeholder="Pastikan Name telah di input dengan benar " >
+                        </div>
+                        <div>
+                            <h1 style="margin-top: 20px">Description</h1>
+                            <textarea name="" id="" class="textarea-porto"></textarea>
+                        </div>
+                        <div>
+                            <h1 style="margin-top: 87px" >Image</h1>
+                            <input type="file" class="input-file" name="image" accept="image/*" required>
+                        </div>
+                        <div class="a-Submitt d-flex  ">
+                            <button type="submit" class="a-submit me-3 ">Submit</button>
+                            <button type="submit" class="btn-cancel">Cancel</button>
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>
