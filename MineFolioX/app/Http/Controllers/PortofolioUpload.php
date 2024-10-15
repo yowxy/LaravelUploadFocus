@@ -52,10 +52,15 @@ class PortofolioUpload extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $portofolio = Portofolio::findOrFail($id); // Ganti nama variabel menjadi $portofolio
+
+        return view('pages.Profile.show', compact('portofolio')); // Kirim variabel 'portofolio'
     }
+
+
+
 
     /**
      * Show the form for editing the specified resource.

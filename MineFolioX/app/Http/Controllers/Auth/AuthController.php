@@ -31,9 +31,15 @@ class AuthController extends Controller
     }
 
     public function logout(Request $request) {
-        Log::info('logout');
+        Log::info('User logging out');
         Auth::logout();
+
+        // Menghapus session yang tersimpan
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
         return redirect()->route('home');
     }
+
 
 }

@@ -14,28 +14,23 @@
 </head>
 
 <body>
-    @include('components.profile')
+    @include('components.navbar')
 
 
     <section id="detail-profile">
         <div class="container">
             <div class="txt-judul">
-                <h1>Alexander</h1>
-                <h2>Hello World</h2>
-                <div class="card-detailProfile">
-
+                <h1>{{ $portofolio->name }}</h1>
+                <h2>{{ $portofolio->title }}</h2>
+                <div class="mt-4" >
+                    <img src="{{ asset('storage/' . $portofolio->image_path) }}" alt="Gambar Portofolio" class="img-fluid  rounded-2xl ">
                 </div>
-
-                <p class="txt-p" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, veniam? Odio modi ab corrupti amet
-                    quos asperiores, ipsam ullam <br> tempora rerum tempore dolor rem maiores nemo earum exercitationem
-                    dicta officiis!Tempora commodi consectetur dolor cupiditate <br>reprehenderit, vel odio recusandae
-                    sit amet omnis repellendus asperiores, facilis modi voluptates. Facere odio facilis ducimus
-                    <br>debitis non delectus, minima dolorum placeat aut quis culpa.
-                    <br>
-                </p>
+                <p class="txt-p">{{ $portofolio->description }}</p>
             </div>
         </div>
     </section>
+
+
 
     @include('components.footer')
 </body>

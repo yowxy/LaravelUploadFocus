@@ -50,10 +50,10 @@
 
                 <div class="d-flex flex-wrap justify-content-center">
                     @foreach ($portfolios as $portfolio)
-                        <div class="card-Detail me-4 mb-4">
+                        <div class="card-Detail me-4 mb-4 ">
                             <h1>{{ $portfolio->title }}</h1>
-                            <p>{{ $portfolio->description }}</p>
-                            <a href="{{ route('profile.detail', $portfolio->id) }}" class="btn-seedetail">See detail</a>
+                            <p class="border border-black ">{{ $portfolio->description }}</p>
+                            <a href="{{ route('pages.profile.show', $portfolio->id) }}" class="btn-seedetail">See detail</a>
                             <a href="{{ route('profile.edit', $portfolio->id) }}" class="card-edit">Edit</a>
                         </div>
                     @endforeach

@@ -26,17 +26,17 @@ Route::namespace('App\Http\Controllers\Auth')->group(function() {
     Route::post('login', 'AuthController@login')->name('pages.login.post');
     // Route::post('logout', 'AuthController@logout')->name('pages.logout');
 
-    Route::post('logout', 'AuthController@logout')->name('pages.logout');
+    // Route::post('logout', 'AuthController@logout')->name('pages.logout');
 
     // Register routes
-    Route::get('register', 'RegisterController@show')->name('pages.register');
+    Route::get('register', 'RegisterController@show')->name('pages.regist   er');
     Route::post('register', 'RegisterController@signUp')->name('pages.registerr');
 });
 
 
 Route::get('profile',[PortofolioUpload::class , 'index'])->name('profile');
 // Route::post('profile',[ProfileController::class , 'index'])->name('profile.edit');
-
+Route::get('portofolios/{id}', [PortofolioUpload::class, 'show'])->name('pages.profile.show');
 
 
 
@@ -67,9 +67,9 @@ Route::get('edit', function(){
 //     return view('pages.Profile.index');
 // })->name('profile');
 
-Route::get('profile/detail', function(){
-    return view('pages.Profile.show');
-})->name('profile.detail');
+// Route::get('profile/detail', function(){
+//     return view('pages.profile.show');
+// })->name('profile.detail');
 
 Route::get('profile/upload', function(){
     return view('pages.Profile.form');
