@@ -53,17 +53,19 @@ Route::get('portofolios/{id}', [PortofolioUpload::class, 'show'])->name('pages.p
 
 
 Route::get('detail/{id}', [PortofolioUpload::class, 'edit'])->name('pages.portofolio.edit');
-
+// Route::get('detail',[PortofolioUpload::class, 'index'])->name('pages.explore.detail');
 
 
 Route::get('detail/show', function(){
     return view('pages.Explore.index');
 })->name('detail.show');
 
-
-Route::get('detail', function(){
-    return view('pages.Explore.detail');
+Route::get('detail', function() {
+    $portofolios = App\Models\Portofolio::simplePaginate(5); // Fetch 5 portfolios per page
+    return view('pages.Explore.detail', compact('portofolios'));
 })->name('detail');
+
+
 
 Route::get('edit', function(){
     return view('pages.Explore.edit');
