@@ -67,37 +67,43 @@ class PortofolioUpload extends Controller
      */
     public function edit($id)
     {
-        $portofolio = Portofolio::findOrFail($id);
-
-        return view('pages.portofolio.edit', compact('portofolio'));
+        $portofolio = Portofolio::findOrFail($id); // Mendapatkan data portofolio berdasarkan id
+        return view('pages.portofolio.edit', compact('portofolio')); // Mengirim data ke view
     }
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(PortofolioRequest $request, string $id)
+    public function update(Request $request, $id)
     {
         $portofolio = Portofolio::findOrFail($id);
 
-        $validatedData = $request->validated();
-
-        if($request->hasFile('image_path')){
-            $imagePath = $request->file('image_path')->store('images/portofoliod', 'public');
-            $validatedData['image_path'] = $imagePath;
-        } else {
-            $validatedData ['image_path'] = $portofolio->image_path;
-        }
-
-        $portofolio->update([
-            'title' => $validatedData['title'],
-            'name' => $validatedData['name'],
-            'description' => $validatedData['image_path'],
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image_path' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
+        // Jika ada gambar baru diunggah
+        if ($request->hasFile('image_path')) {
+            // Hapus gambar lama jika ada
+            if ($portofolio->image_path && file_exists(storage_path('app/public/' . $portofolio->image_path))) {
+                unlink(storage_path('app/public/' . $portofolio->image_path));
+            }
 
-        return redirect()->route('profile')->with('success','portofolio berhasil di perbarui');
+            // Simpan gambar baru
+            $imagePath = $request->file('image_path')->store('images/portofolios', 'public');
+            $validatedData['image_path'] = $imagePath;
+        }
 
+        $portofolio->update($validatedData);
+
+        return redirect()->route('profile')->with('success', 'Portofolio berhasil diperbarui!');
     }
+
+
 
     /**
      * Remove the specified resource from storage.
