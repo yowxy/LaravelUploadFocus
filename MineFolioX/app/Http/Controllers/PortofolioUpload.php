@@ -13,10 +13,14 @@ class PortofolioUpload extends Controller
      */
     public function index()
     {
-        $portfolios = Portofolio::where('user_id', auth()->id())->get();
+        // Mengambil 5 portofolio per halaman tanpa nomor halaman, hanya Previous dan Next
+        $portfolios = Portofolio::where('user_id', auth()->id())->simplePaginate(5);
 
-        return view('pages.Profile.index', compact('portfolios')); // pastikan variabel 'portfolios'
+        // Pastikan kamu sudah mengirimkan data portfolios ke view
+        return view('pages.Profile.index', compact('portfolios'));
     }
+
+
 
 
     /**

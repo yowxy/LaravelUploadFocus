@@ -47,19 +47,22 @@
             <!-- Portfolio Section -->
             <div id="My-Portofolio">
                 <h1 class="text-center mb-4">My Portfolio</h1>
-
                 <div class="d-flex flex-wrap justify-content-center">
                     @foreach ($portfolios as $portfolio)
-                        <div class="card-Detail me-4 mb-4 ">
+                        <div class="card-Detail me-4 mb-4">
                             <h1>{{ $portfolio->title }}</h1>
-                            <p class="">{{ $portfolio->description }}</p>
+                            <p>{{ $portfolio->description }}</p>
                             <a href="{{ route('pages.profile.show', $portfolio->id) }}" class="btn-seedetail">See detail</a>
                             <a href="{{ route('pages.portofolio.edit', $portfolio->id) }}" class="card-edit">Edit</a>
                         </div>
                     @endforeach
                 </div>
 
-                <div>
+                <!-- Pagination -->
+                <div class="pagination justify-content-center">
+                    {{ $portfolios->links() }}
+                </div>
+
                     <h1 class="txt-akhir text-center">Thank you for visiting my account</h1>
                 </div>
             </div>

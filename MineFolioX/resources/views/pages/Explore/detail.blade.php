@@ -25,6 +25,11 @@
                 <a href="{{ url('login') }}" class="text-decoration-none text-white">Login To CreatePortofolio</a>
             </div>
             @endguest
+            <form action="">
+
+
+
+            </form>
             {{-- yang bisa di tekan ke href cuman 1 aja hehehe --}}
             <a class="card-detail  row text-decoration-none" href="{{ url('detail/show') }}">
                 <div class="col-10">
