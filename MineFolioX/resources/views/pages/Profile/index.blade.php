@@ -54,6 +54,14 @@
                             <p>{{ $portfolio->description }}</p>
                             <a href="{{ route('pages.profile.show', $portfolio->id) }}" class="btn-seedetail">See detail</a>
                             <a href="{{ route('pages.portofolio.edit', $portfolio->id) }}" class="card-edit">Edit</a>
+                              <!-- Form untuk menghapus portofolio -->
+
+                            <form action="{{ route('portofolio.destroy', $portfolio->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Apakah Anda yakin ingin menghapus?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="card-delete">Delete</button>
+                            </form>
+
                         </div>
                     @endforeach
                 </div>

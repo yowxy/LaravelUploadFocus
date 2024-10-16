@@ -114,6 +114,16 @@ class PortofolioUpload extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $portofolio = Portofolio::findOrFail($id);
+
+        // Hapus gambar dari penyimpanan jika ada
+        if ($portofolio->image_path && file_exists(storage_path('app/public/' . $portofolio->image_path))) {
+            unlink(storage_path('app/public/' . $portofolio->image_path));
+        }
+
+        // Hapus portofolio dari database
+        $portofolio->delete();
+
+        return redirect()->route('profile')->with('success', 'Portofolio berhasil dihapus!');
     }
 }

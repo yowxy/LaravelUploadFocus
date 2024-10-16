@@ -5,6 +5,7 @@ use App\Http\Controllers\DetailController;
 use App\Http\Controllers\PortofolioUpload;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -29,7 +30,7 @@ Route::namespace('App\Http\Controllers\Auth')->group(function() {
     // Route::post('logout', 'AuthController@logout')->name('pages.logout');
 
     // Register routes
-    Route::get('register', 'RegisterController@show')->name('pages.regist   er');
+    Route::get('register', 'RegisterController@show')->name('pages.register');
     Route::post('register', 'RegisterController@signUp')->name('pages.registerr');
 });
 
@@ -37,6 +38,7 @@ Route::namespace('App\Http\Controllers\Auth')->group(function() {
 Route::get('profile',[PortofolioUpload::class , 'index'])->name('profile');
 // Route::post('profile',[ProfileController::class , 'index'])->name('profile.edit');
 Route::get('portofolios/{id}', [PortofolioUpload::class, 'show'])->name('pages.profile.show');
+
 
 
 // Route::middleware('auth')->group(function(){

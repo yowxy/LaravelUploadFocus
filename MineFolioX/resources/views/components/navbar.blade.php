@@ -9,11 +9,14 @@
     <div class="container mx-auto">
         <a class="txt-a" href="{{ url('/') }}">MineFolioX</a>
         <div class="d-flex w-100 justify-content-center">
-            <form class="d-flex justify-content-center align-items-center" role="search" method="POST">
+            <form class="d-flex justify-content-center align-items-center" role="search" method="POST" action="">
+                @csrf <!-- Pastikan menambahkan token CSRF -->
                 <div class="search-container d-flex align-items-center position-relative">
                     <img src="{{ url('images/search.png') }}" alt="Search Icon" class="search-icon">
-                    <input class="input-search mx-2" type="search" placeholder="Search Your Portfolio" aria-label="Search">
+                    <input class="input-search mx-2" type="search" name="search" placeholder="Search Your Portfolio" aria-label="Search">
                 </div>
+                <!-- Remainder of your navbar code -->
+            </form>
 
                 {{-- If user is authenticated --}}
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -23,7 +26,7 @@
                             <div class="me-2">
                                 <img src="{{ filter_var(auth()->user()->picture, FILTER_VALIDATE_URL) ? auth()->user()->picture : Storage::url(auth()->user()->picture) }}"
                                      alt="{{ auth()->user()->name }}" class="avatar rounded-circle">
-                            </div>
+                                    </div>
 
                             <div class="text-left ">
                                 <span class="fw-bold">{{ auth()->user()->name }}</span>
@@ -59,7 +62,6 @@
                     <a class="btn-sign-in mx-2 px-2 text-decoration-none text-center justify-content-center" href="{{ url('login') }}">Sign-In</a>
                 </div>
                 @endguest
-            </form>
         </div>
     </div>
 </nav>
