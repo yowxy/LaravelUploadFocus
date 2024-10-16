@@ -21,6 +21,7 @@ Route::middleware('auth')->group(  function() {
     });
 });
 
+
 Route::namespace('App\Http\Controllers\Auth')->group(function() {
     // Login routes
     Route::get('login', 'AuthController@index')->name('pages.login');
@@ -38,8 +39,7 @@ Route::namespace('App\Http\Controllers\Auth')->group(function() {
 Route::get('profile',[PortofolioUpload::class , 'index'])->name('profile');
 // Route::post('profile',[ProfileController::class , 'index'])->name('profile.edit');
 Route::get('portofolios/{id}', [PortofolioUpload::class, 'show'])->name('pages.profile.show');
-
-
+Route::post('logout', [ProfileController::class, 'logout'])->name('logout');
 
 // Route::middleware('auth')->group(function(){
 

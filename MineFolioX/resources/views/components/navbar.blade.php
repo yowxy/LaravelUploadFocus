@@ -44,7 +44,7 @@
                             </li>
 
                             <li>
-                                <form action="" method="POST">
+                                <form action="{{ route('logout') }}" method="POST">
                                     @csrf
                                     <button type="submit" class="dropdown-item">Log out</button>
                                 </form>
