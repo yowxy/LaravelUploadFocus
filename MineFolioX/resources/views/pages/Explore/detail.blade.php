@@ -28,20 +28,23 @@
 
             @foreach ($portofolios as $portofolio)
                 {{-- yang bisa di tekan ke href cuman 1 aja hehehe --}}
-                <a class="card-detail  row text-decoration-none" href="{{ url('detail/show') }}">
+                <a class="card-detail  row text-decoration-none" href="{{ route('pages.profile.show', $portofolio->id) }}">
                     <div class="col-10">
                         <h1>{{ $portofolio->title }}</h1>
                         <p>
                             {{ $portofolio->description }}
                         </p>
                     </div>
-                    <div class="col-1  d-flex justify-content-end align-items-end ">
-                        <img src="{{ url('images/profile-1.png') }}" alt="profile-detail" class="img-profile ">
-                        <div class="m-0 txt-profile ">
-                            <h1 class="mb-0 mr-10 ">Jayden</h1>
-                            <p class="mt-0 mr-10">5 Hours Ago</p>
+                    <div class="col-1 d-flex justify-content-end align-items-end">
+                        <img src="{{ filter_var($portofolio->user->picture, FILTER_VALIDATE_URL) ? $portofolio->user->picture : Storage::url($portofolio->user->picture) }}"
+                        alt="{{ $portofolio->user->name }}" class="avatar rounded-circle">
+
+                        <div class="m-0 txt-profile">
+                            <h1 class="mb-0 mr-10">{{ $portofolio->name }}</h1>
+                            <p class="mt-0 mr-10">{{ $portofolio->created_at->diffForHumans() }}</p>
                         </div>
                     </div>
+
                 </a>
                 @endforeach
 

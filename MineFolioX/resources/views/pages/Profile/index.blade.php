@@ -60,7 +60,7 @@
 
                 <!-- Pagination -->
                 <div class="pagination justify-content-center">
-                    {{ $portfolio->links() }}
+                    {{ $portfolios->links() }}
                 </div>
 
                     <h1 class="txt-akhir text-center">Thank you for visiting my account</h1>
