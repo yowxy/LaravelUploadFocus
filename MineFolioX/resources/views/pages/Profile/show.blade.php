@@ -19,14 +19,26 @@
 
     <section id="detail-profile">
         <div class="container">
-            <div class="txt-judul">
-                <h1>{{ $portofolio->name }}</h1>
-                <h2>{{ $portofolio->title }}</h2>
-                <div class="mt-4" >
-                    <img src="{{ asset('storage/' . $portofolio->image_path) }}" alt="Gambar Portofolio" class="img-fluid  rounded-2xl ">
+            @auth
+                <div class="txt-judul">
+                    <h1>{{ $portofolio->name }}</h1>
+                    <h2>{{ $portofolio->title }}</h2>
+                    <div class="mt-4">
+                        <img src="{{ asset('storage/' . $portofolio->image_path) }}" alt="Gambar Portofolio"
+                            class="img-fluid  rounded-2xl ">
+                    </div>
+                    <p class="txt-p">{{ $portofolio->description }}</p>
                 </div>
-                <p class="txt-p">{{ $portofolio->description }}</p>
-            </div>
+            @endauth
+            @guest
+                <div class="text-" style="margin: 300px">
+                    <h1 class="text-center  text-red-700 "> <a href="{{ route('pages.login') }}"
+                            class="text-decoration-none text-red-700 ">Sign-In</a> or
+                        <a href="{{ route('pages.register') }}" class="text-decoration-none text-red-700 ">Sign-Up</a>
+                        To see detail Portofolio <br>
+                    </h1>
+                </div>
+            @endguest
         </div>
     </section>
 

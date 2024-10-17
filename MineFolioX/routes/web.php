@@ -41,6 +41,10 @@ Route::get('profile',[PortofolioUpload::class , 'index'])->name('profile');
 Route::get('portofolios/{id}', [PortofolioUpload::class, 'show'])->name('pages.profile.show');
 Route::post('logout', [ProfileController::class, 'logout'])->name('logout');
 
+Route::post('/search', [SearchController::class, 'index'])->name('search')->middleware('auth');
+
+
+
 // Route::middleware('auth')->group(function(){
 
 // });

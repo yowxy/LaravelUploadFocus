@@ -26,6 +26,9 @@
             </div>
             @endguest
 
+            @auth
+
+            @endauth
             @foreach ($portofolios as $portofolio)
                 {{-- yang bisa di tekan ke href cuman 1 aja hehehe --}}
                 <a class="card-detail  row text-decoration-none" href="{{ route('pages.profile.show', $portofolio->id) }}">

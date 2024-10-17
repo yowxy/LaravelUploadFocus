@@ -70,7 +70,6 @@
                 <div class="pagination justify-content-center">
                     {{ $portfolios->links() }}
                 </div>
-
                     <h1 class="txt-akhir text-center">Thank you for visiting my account</h1>
                 </div>
             </div>

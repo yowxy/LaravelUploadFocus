@@ -9,14 +9,14 @@
     <div class="container mx-auto">
         <a class="txt-a" href="{{ url('/') }}">MineFolioX</a>
         <div class="d-flex w-100 justify-content-center">
-            <form class="d-flex justify-content-center align-items-center" role="search" method="POST" action="">
+            <form class="d-flex justify-content-center align-items-center" role="search" method="POST" action="{{ route('search') }}">
                 @csrf <!-- Pastikan menambahkan token CSRF -->
                 <div class="search-container d-flex align-items-center position-relative">
                     <img src="{{ url('images/search.png') }}" alt="Search Icon" class="search-icon">
-                    <input class="input-search mx-2" type="search" name="search" placeholder="Search Your Portfolio" aria-label="Search">
+                    <input class="input-search mx-2" type="search" name="search" placeholder="Search Your Portfolio" aria-label="Search" required>
                 </div>
-                <!-- Remainder of your navbar code -->
             </form>
+
 
                 {{-- If user is authenticated --}}
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
