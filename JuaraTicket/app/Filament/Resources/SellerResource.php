@@ -23,15 +23,36 @@ class SellerResource extends Resource
     {
         return $form
             ->schema([
-                //
+
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+
+                Forms\Components\TextInput::make('location')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('telephone')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\FileUpload::make('photo')
+                    ->required()
+                    ->image(),
+                    
             ]);
     }
+
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                //
+
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+
+                Tables\Columns\ImageColumn::make('photo')
+                    ->searchable()
+                    ->circular(),
             ])
             ->filters([
                 //
