@@ -18,6 +18,7 @@ class AuthController extends Controller
     {
         return view ('pages.login');
     }
+    
 
     public function login (LoginRequest $request){
         Log::info('login');

@@ -49,7 +49,7 @@
                     </div>
 
                 </a>
-                @endforeach
+            @endforeach
 
 
 

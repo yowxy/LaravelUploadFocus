@@ -14,6 +14,7 @@ class SearchController extends Controller
             'search' => 'required|string|max:255',
         ]);
 
+        
         // Ambil user yang sedang login (ini bisa kamu gunakan untuk keperluan lain, jika diperlukan)
         $user = auth()->user();
 
