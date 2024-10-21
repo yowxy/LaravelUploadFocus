@@ -6,9 +6,11 @@ use App\Filament\Resources\TicketResource\Pages;
 use App\Filament\Resources\TicketResource\RelationManagers;
 use App\Models\Ticket;
 use Filament\Forms;
+use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -23,7 +25,69 @@ class TicketResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Fieldset::make('Details')
+                    ->schema([
+
+                        Forms\Components\TextInput::make('name')
+                            ->required()
+                            ->maxLength(255),
+
+                        Forms\Components\Textarea::make('address')
+                            ->required()
+                            ->rows(3)
+                            ->maxLength(255),
+
+                        Forms\Components\FileUpload::make('thumbnail')
+                            ->required()
+                            ->image(),
+
+                        Forms\Components\Repeater::make('photos')
+                            ->relationship('photos')
+                            ->schema([
+                                Forms\Components\FileUpload::make('photo')
+                                    ->required(),
+                            ])
+                    ]),
+
+                Fieldset::make('Additional')
+                    ->schema([
+                        Forms\Components\RichEditor::make('about')
+                            ->required(),
+
+                        Forms\Components\TextInput::make('path_video')
+                            ->required()
+                            ->maxLength(255),
+
+                        Forms\Components\TextInput::make('price')
+                            ->required()
+                            ->numeric()
+                            ->prefix('IDR'),
+
+                        Forms\Components\Select::make('is_popular')
+                            ->options([
+                                true => 'popular',
+                                false => 'Not Popular',
+                            ])
+                        ->required(),
+
+                        Forms\Components\Select::make('category_id')
+                                ->relationship('category' , 'name')
+                                ->searchable()
+                                ->preload()
+                                ->required(),
+
+                        Forms\Components\Select::make('seller_id')
+                                ->relationship('seller', 'name')
+                                ->searchable()
+                                ->required()
+                                ->preload(),
+
+                         Forms\Components\TimePicker::make('open_time_at')
+                                ->required(),
+
+                         Forms\Components\TimePicker::make('closed_time_at')
+                                ->required(),
+                    ])
             ]);
     }
 
@@ -31,13 +95,27 @@ class TicketResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+
+                Tables\Columns\TextColumn::make('category.name'),
+                 Tables\Columns\ImageColumn::make('thumbnail'),
+                 Tables\Columns\IconColumn::make('is_popular')
+                    ->boolean()
+                    ->trueColor('success')
+                    ->falseColor('danger')
+                    ->trueIcon('heroicon-o-check-circle')
+                    ->falseIcon('heroicon-o-x-circle')
+                    ->label('Popular')
             ])
             ->filters([
-                //
+                SelectFilter::make('category_id')
+                    ->label('category')
+                     ->relationship('category' , 'name'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('address');
+            $table->string('thumbnail');
             $table->string('path_video');
             $table->unsignedBigInteger('price');
             $table->boolean('is_popular');
