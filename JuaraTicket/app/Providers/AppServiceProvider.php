@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
+use App\Repositories\TicketRepository;
 use Illuminate\Support\ServiceProvider;
-use TicketRepository;
-use TicketRepositoryInterface;
+use App\Repositories\Contracts\TicketRepositoryInterface;
 
 class AppServiceProvider extends ServiceProvider
 {

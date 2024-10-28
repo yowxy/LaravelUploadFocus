@@ -1,6 +1,9 @@
 <?php
 
+namespace App\Repositories;
+
 use App\Models\Ticket;
+use App\Repositories\Contracts\TicketRepositoryInterface;
 
 class TicketRepository implements TicketRepositoryInterface{
     public function getPopularTickets($limit){

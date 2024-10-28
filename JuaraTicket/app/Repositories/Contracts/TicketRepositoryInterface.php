@@ -1,5 +1,6 @@
 <?php
 
+namespace  App\Repositories\Contracts;
 
 interface TicketRepositoryInterface{
     public function getPopularTickets($limit);
