@@ -19,7 +19,7 @@ class FrontService{
         $this->sellerRepository = $sellerRepository;
     }
 
-    public  function getFrontPage(){
+    public  function getFrontPageData(){
         $categories = $this->CategoryRepository->getAllCategories();
         $sellers = $this->sellerRepository->getAllSeller();
         $popularTickets = $this->ticketRepository->getPopularTickets(4);
