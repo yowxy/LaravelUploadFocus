@@ -45,6 +45,7 @@ class PortofolioUpload extends Controller
             'name' => $validatedData['name'],
             'description' => $validatedData['description'],
             'image_path' => $imagePath,
+            'category_id' => $request->category_id,
             'user_id' => auth()->id(),
         ]);
 

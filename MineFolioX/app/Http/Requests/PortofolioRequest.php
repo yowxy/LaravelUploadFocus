@@ -26,6 +26,7 @@ class PortofolioRequest extends FormRequest
             'name' => 'required|string|min:5|max:255|unique:portofolios,name',
             'description' => 'required|string|min:5|max:255',
             'image_path' => 'required|image|mimes:png,jpg,jpeg|max:10048',
+            'category_id' => 'required|exists:categories,id', 
         ];
     }
 }

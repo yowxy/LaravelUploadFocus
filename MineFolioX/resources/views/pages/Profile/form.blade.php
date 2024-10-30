@@ -16,7 +16,7 @@
 
     <section id="form-upload" >
         <div class="container" >
-            <form action="{{ route('portofolio.store') }}" method="POST"  enctype="multipart/form-data"  >
+            <form action="{{ route('portofolio.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="txt-upload">
                     <h1 for="title">Title</h1>
@@ -26,7 +26,7 @@
                     @enderror
                 </div>
                 <div class="txt-upload1">
-                    <h1 for="name">Name</h1>
+                    <h1>Name</h1>
                     <input type="text" class="input-upload @error('name') is-invalid @enderror" name="name" required>
                     @error('name')
                         <div class="invalid-feedback">{{ $message }}</div>
@@ -41,8 +41,21 @@
                 </div>
                 <div class="txt-upload1">
                     <h1>Image</h1>
-                    <input type="file" class="input-upload @error('image_path') is-invalid @enderror" name="image_path" accept="image/" required>
+                    <input type="file" class="input-upload @error('image_path') is-invalid @enderror" name="image_path" accept="image/*" required>
                     @error('image_path')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="txt-upload1">
+                    <h1>Category</h1>
+                    <select name="category_id" class="input-upload @error('category_id') is-invalid @enderror" required>
+                        <option value="">Select a category</option>
+                        @foreach($categories as $category)
+
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                    @error('category_id')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
@@ -50,6 +63,7 @@
                     <button type="submit" class="a-submit">Submit</button>
                 </div>
             </form>
+
 
         </div>
     </section>

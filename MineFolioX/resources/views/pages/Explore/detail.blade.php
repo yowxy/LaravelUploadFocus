@@ -20,15 +20,27 @@
         <div class="container">
             <h1>Show Your Portofolio</h1>
 
-            @guest
-            <div class="btn-loginCreate">
-                <a href="{{ url('login') }}" class="text-decoration-none text-white">Login To CreatePortofolio</a>
+            <div class="d-flex" >
+                @guest
+                <div class="btn-loginCreate  me-4">
+                    <a href="{{ url('login') }}" class="text-decoration-none text-white">Login To CreatePortofolio</a>
+                </div>
+                @endguest
+
+                <div class="btn-category me-2 ">
+                    <p class="mt-2" >UIUX Design</p>
+                </div>
+
+                <div class="btn-category me-2">
+                    <p class="mt-2" >Graphic Design</p>
+                </div>
+
+                <div class="btn-category" style="width: 242px" >
+                    <p class="mt-2" >Website Development</p>
+                </div>
             </div>
-            @endguest
 
-            @auth
 
-            @endauth
             @foreach ($portofolios as $portofolio)
                 {{-- yang bisa di tekan ke href cuman 1 aja hehehe --}}
                 <a class="card-detail  row text-decoration-none" href="{{ route('pages.profile.show', $portofolio->id) }}">

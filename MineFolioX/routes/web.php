@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryControllerr;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\PortofolioUpload;
 use App\Http\Controllers\ProfileController;
@@ -86,9 +87,9 @@ Route::get('edit', function(){
 //     return view('pages.profile.show');
 // })->name('profile.detail');
 
-Route::get('profile/upload', function(){
-    return view('pages.Profile.form');
-})->name('profile.upload');
+
+Route::get('profile/upload', [CategoryControllerr::class, 'index'])->name('profile.upload');
+
 
 Route::get('profile/edit', function() {
     return view('pages.Profile.edit');
