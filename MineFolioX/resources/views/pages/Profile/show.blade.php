@@ -28,6 +28,7 @@
                             class="img-fluid  rounded-2xl ">
                     </div>
                     <p class="txt-p">{{ $portofolio->description }}</p>
+                    <p class="category">Kategori: {{ $portofolio->category->name ?? 'Tidak ada kategori' }}</p>
                 </div>
             @endauth
             @guest

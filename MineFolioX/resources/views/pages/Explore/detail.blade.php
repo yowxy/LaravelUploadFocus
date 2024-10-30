@@ -49,6 +49,9 @@
                         <p>
                             {{ $portofolio->description }}
                         </p>
+
+                        <p class="category">Kategori: {{ $portofolio->category->name ?? 'Tidak ada kategori' }}</p>
+
                     </div>
                     <div class="col-1 d-flex justify-content-end align-items-end">
                         <img src="{{ filter_var($portofolio->user->picture, FILTER_VALIDATE_URL) ? $portofolio->user->picture : Storage::url($portofolio->user->picture) }}"

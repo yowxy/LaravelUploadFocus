@@ -52,6 +52,7 @@
                         <div class="card-Detail me-4 mb-4">
                             <h1>{{ $portfolio->title }}</h1>
                             <p>{{ $portfolio->description }}</p>
+                            <p class="category">Kategori: {{ $portfolio->category->name ?? 'Tidak ada kategori' }}</p>
                             <a href="{{ route('pages.profile.show', $portfolio->id) }}" class="btn-seedetail">See detail</a>
                             <a href="{{ route('pages.portofolio.edit', $portfolio->id) }}" class="card-edit">Edit</a>
                               <!-- Form untuk menghapus portofolio -->

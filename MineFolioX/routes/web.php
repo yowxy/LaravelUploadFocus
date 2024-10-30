@@ -46,6 +46,7 @@ Route::post('/search', [SearchController::class, 'index'])->name('search')->midd
 
 
 
+
 // Route::middleware('auth')->group(function(){
 
 // });
