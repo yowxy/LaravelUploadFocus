@@ -16,9 +16,15 @@ class Portofolio extends Model
         'description',
         'image_path',
         'user_id',
+        'category_id'
     ];
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function category() // Fungsi relasi dengan kategori
+    {
+        return $this->belongsTo(Category::class);
     }
 }
