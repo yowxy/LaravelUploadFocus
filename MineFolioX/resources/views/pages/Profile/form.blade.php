@@ -46,7 +46,7 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class="txt-upload1">
+                <div class="txt-upload1">   
                     <h1>Category</h1>
                     <select name="category_id" class="input-upload @error('category_id') is-invalid @enderror" required>
                         <option value="">Select a category</option>
