@@ -11,26 +11,31 @@ class SearchController extends Controller
     {
         // Validasi input pencarian
         $request->validate([
-            'search' => 'required|string|max:255',
+            'search' => 'nullable|string|max:255', // 'search' sekarang opsional
+            'category' => 'nullable|string|max:255' // tambahkan validasi untuk 'category'
         ]);
 
-        // Ambil user yang sedang login (ini bisa kamu gunakan untuk keperluan lain, jika diperlukan)
-        $user = auth()->user();
-
-        // Query untuk mencari berdasarkan Title, Description, Name, dan Category dari semua portofolio
         $searchQuery = $request->input('search');
+        $categoryQuery = $request->input('category');
 
-        $results = Portofolio::where(function ($query) use ($searchQuery) {
-                $query->where('title', 'like', "%{$searchQuery}%")
-                      ->orWhere('description', 'like', "%{$searchQuery}%")
-                      ->orWhereHas('user', function ($q) use ($searchQuery) {
-                          $q->where('name', 'like', "%{$searchQuery}%");
-                      })
-                      ->orWhereHas('category', function ($q) use ($searchQuery) {
-                          $q->where('name', 'like', "%{$searchQuery}%");
-                      });
+        // Query untuk mencari portofolio berdasarkan Title, Description, Name, dan Category
+        $results = Portofolio::where(function ($query) use ($searchQuery, $categoryQuery) {
+                if ($searchQuery) {
+                    $query->where('title', 'like', "%{$searchQuery}%")
+                          ->orWhere('description', 'like', "%{$searchQuery}%")
+                          ->orWhereHas('user', function ($q) use ($searchQuery) {
+                              $q->where('name', 'like', "%{$searchQuery}%");
+                          });
+                }
+
+                // Filter berdasarkan kategori jika ada
+                if ($categoryQuery) {
+                    $query->whereHas('category', function ($q) use ($categoryQuery) {
+                        $q->where('name', $categoryQuery);
+                    });
+                }
             })
-            ->simplePaginate(10); // Ganti get() dengan paginate()
+            ->simplePaginate(10);
 
         // Kembalikan hasil pencarian ke view pages.Explore.detail
         return view('pages.Explore.detail', ['portofolios' => $results]);

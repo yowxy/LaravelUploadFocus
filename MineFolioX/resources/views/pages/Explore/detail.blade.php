@@ -28,14 +28,20 @@
                 @endguest
 
 
-                <div class="btn-category me-2 ">
-                    <p class="mt-2" >UIUX Design</p>
+                <div class="btn-category me-2">
+                    <a href="{{ route('search.index', ['category' => 'UI/UX Design']) }}" class="btn-category  text-decoration-none ">
+                        <p class="mt-2">UIUX Design</p>
+                    </a>
                 </div>
                 <div class="btn-category me-2">
-                    <p class="mt-2" >Graphic Design</p>
+                    <a href="{{ route('search.index', ['category' => 'Graphic Design']) }}" class="btn-category text-decoration-none ">
+                        <p class="mt-2">Graphic Design</p>
+                    </a>
                 </div>
-                <div class="btn-category" style="width: 242px" >
-                    <p class="mt-2" >Website Development</p>
+                <div class="btn-category" style="width: 242px">
+                    <a href="{{ route('search.index', ['category' => 'Website Development']) }}" class="btn-category text-decoration-none">
+                        <p class="mt-2">Website Development</p>
+                    </a>
                 </div>
 
 
