@@ -26,13 +26,19 @@
                     <a href="{{ url('login') }}" class="text-decoration-none text-white">Login To CreatePortofolio</a>
                 </div>
                 @endguest
-                <div class="btn-category-wrapper">
-                    @foreach ($categoriesss as $category)
-                        <a href="{{ route('filter.category', $category->id) }}" class="btn-category me-2">
-                            <p class="mt-2">{{ $category->name }}</p>
-                        </a>
-                    @endforeach
+
+
+                <div class="btn-category me-2 ">
+                    <p class="mt-2" >UIUX Design</p>
                 </div>
+                <div class="btn-category me-2">
+                    <p class="mt-2" >Graphic Design</p>
+                </div>
+                <div class="btn-category" style="width: 242px" >
+                    <p class="mt-2" >Website Development</p>
+                </div>
+
+
 
             </div>
 

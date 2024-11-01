@@ -68,10 +68,10 @@ Route::get('detail/show', function(){
     return view('pages.Explore.index');
 })->name('detail.show');
 
-Route::get('detail', function() {
-    $portofolios = App\Models\Portofolio::simplePaginate(5); // Fetch 5 portfolios per page
-    return view('pages.Explore.detail', compact('portofolios'));
-})->name('detail');
+    Route::get('detail', function() {
+        $portofolios = App\Models\Portofolio::simplePaginate(5); // Fetch 5 portfolios per page
+        return view('pages.Explore.detail', compact('portofolios'));
+    })->name('detail');
 
 
 
@@ -88,10 +88,9 @@ Route::get('edit', function(){
 //     return view('pages.profile.show');
 // })->name('profile.detail');
 
-Route::get('categories/{id}', [CategoryController::class, 'filterByCategory'])->name('filter.category');
-Route::get('profile/upload', [CategoryController::class, 'index'])->name('profile.upload');
+Route::get('/category/{id}', [CategoryController::class, 'filterByCategory'])->name('category.filter');
 
-
+    Route::get('profile/upload', [CategoryController::class, 'index'])->name('profile.upload');
 
 
 Route::get('profile/edit', function() {

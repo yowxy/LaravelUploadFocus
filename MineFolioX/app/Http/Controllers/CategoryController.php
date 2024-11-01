@@ -13,15 +13,13 @@ class CategoryController extends Controller
         return view('pages.Profile.form', compact('categories')); // Pastikan view ini sesuai
     }
 
-
-    public function filterByCategory($categoryId)
+    public function filterByCategory($id)
     {
-        $category = Category::findOrFail($categoryId);
-        $portfolios = $category->portfolios;
-        $categoriesss = Category::all(); // Ubah di sini
+        $category = Category::findOrFail($id); // Ambil kategori berdasarkan ID
+        $portfolios = $category->portfolios()->simplePaginate(5); // Ambil portofolio berdasarkan kategori dengan paginasi
+        $categories = Category::all(); // Ambil semua kategori
 
-        return view('pages.Explore.detail', compact('portfolios', 'categoriesss')); // Ubah di sini
+        return view('pages.Explore.detail', compact('portfolios', 'categories')); // Kembalikan ke tampilan dengan data yang diperlukan
     }
-
 
 }
