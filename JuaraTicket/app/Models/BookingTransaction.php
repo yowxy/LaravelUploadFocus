@@ -23,6 +23,19 @@ class BookingTransaction extends Model
         'ticket_id',
     ];
 
+    protected $casts = [
+        'started_at' => 'date'
+    ];
+
+    public static  function generateUniqueTrxId(){
+        $prefix = 'JRX';
+        do {
+            $randomString = $prefix .mt_rand(1000 ,99999);
+        } while(self::where('booking_trx_id', $randomString)->exists());
+
+        return $randomString;
+    }
+
     public function tickets() :BelongsTo
     {
         return $this->belongsTo(Ticket::class ,'ticket_id' );
