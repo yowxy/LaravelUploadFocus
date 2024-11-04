@@ -31,8 +31,8 @@ class FrontController extends Controller
 
     public function index (){
         $data = $this->frontService->getFrontPageData();
-        // return view('front.index', $data);
-        dd($data);
+        return view('front.index', $data);
+        // dd($data);
     }
 
     // Konsep MVC
