@@ -30,7 +30,7 @@
 
                         @forelse ($popularTickets as $itemPopularTicket)
                             <div class="swiper-slide !w-fit">
-                                <a href="details.html" class="card">
+                                <a href="{{ route('front.details', $itemPopularTicket->slug) }}" class="card">
                                     <div
                                         class="relative flex items-end w-[345px] h-[220px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
                                         <img src="{{ Storage::url($itemPopularTicket->thumbnail) }}"
@@ -92,7 +92,7 @@
 
                         @forelse ($sellers as $itemSeller )
                         <div class="swiper-slide !w-fit">
-                            <a href="city.html" class="card">
+                            <a href="{{ route('front.details', $itemSeller->slug) }}" class="card">
                                 <div
                                     class="relative flex items-end w-[170px] h-[200px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
                                     <img src="{{ Storage::url($itemSeller->photo) }}"
@@ -123,7 +123,7 @@
 
                     @forelse ($newTickets as $itemNewTickets )
 
-                    <a href="details.html" class="card">
+                    <a href="{{ route('front.details', $itemNewTickets->slug) }}" class="card">
                         <div
                             class="flex items-center justify-between rounded-3xl p-[6px] pr-[14px] bg-white overflow-hidden">
                             <div class="flex items-center gap-[14px]">
