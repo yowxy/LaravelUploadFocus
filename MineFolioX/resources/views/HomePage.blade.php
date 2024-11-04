@@ -35,43 +35,49 @@
                 </a>
             </div>
 
-            <div class="d-flex position-relative mt-5 justify-content-center ">
-                <div class="box-yellow me-3 img-hover"> <!-- Add margin-end (me-3) to give space -->
-                    <div style="width: 88px; height: 127px; left: 18px; top: 18px; position: absolute">
-                        <div style="width: 84px; height: 63px; left: 4px; top: 0px; position: absolute">
-                            <div class="uiux">UIX</div>
-                            <div class="design">Design</div>
-                        </div>
-                        <div>
-                            <img src="{{  url('images/UIUX.png') }}" alt="" class="img-uiux">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="box-green me-3 img-hover">
-                    <div style="width: 88px; height: 127px; left: 18px; top: 18px; position: absolute">
-                        <div style="width: 84px; height: 63px; left: 4px; top: 0px; position: absolute">
-                            <div class="uiux  text-white ">Graphic </div>
-                            <div class="design  text-white ">Design</div>
-                        </div>
-                        <div>
-                            <img src="{{  url('images/PC.png') }}" alt="" class="img-pc">
+            <a href="{{ route('search.index', ['category' => 'UI/UX Design']) }}">
+                <div class="d-flex position-relative mt-5 justify-content-center ">
+                    <div class="box-yellow me-3 img-hover"> <!-- Add margin-end (me-3) to give space -->
+                        <div style="width: 88px; height: 127px; left: 18px; top: 18px; position: absolute">
+                            <div style="width: 84px; height: 63px; left: 4px; top: 0px; position: absolute">
+                                <div class="uiux">UIX</div>
+                                <div class="design">Design</div>
+                            </div>
+                            <div>
+                                <img src="{{  url('images/UIUX.png') }}" alt="" class="img-uiux">
+                            </div>
                         </div>
                     </div>
-                </div>
+            </a>
 
-
-                <div class="box-red img-hover">
-                    <div style="width: 88px; height: 127px; left: 18px; top: 18px; position: absolute">
-                        <div style="width: 84px; height: 63px; left: 4px; top: 0px; position: absolute">
-                            <div class="uiux  text-white ">Website</div>
-                            <div class="design  text-white ">Development</div>
-                        </div>
-                        <div>
-                            <img src="{{  url('images/Webdev.png') }}" alt="" class="img-pc">
+                <a href="{{ route('search.index', ['category' => 'Graphic Design']) }}" >
+                    <div class="box-green me-3 img-hover ">
+                        <div style="width: 88px; height: 127px; left: 18px; top: 18px; position: absolute">
+                            <div style="width: 84px; height: 63px; left: 4px; top: 0px; position: absolute">
+                                <div class="uiux  text-white ">Graphic </div>
+                                <div class="design  text-white ">Design</div>
+                            </div>
+                            <div>
+                                <img src="{{  url('images/PC.png') }}" alt="" class="img-pc">
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
+
+
+                <a href="{{ route('search.index', ['category' => 'Website Development']) }}" >
+                    <div class="box-red img-hover">
+                        <div style="width: 88px; height: 127px; left: 18px; top: 18px; position: absolute">
+                            <div style="width: 84px; height: 63px; left: 4px; top: 0px; position: absolute">
+                                <div class="uiux  text-white ">Website</div>
+                                <div class="design  text-white ">Development</div>
+                            </div>
+                            <div>
+                                <img src="{{  url('images/Webdev.png') }}" alt="" class="img-pc">
+                            </div>
+                        </div>
+                    </div>
+                </a>
 
 
             </div>
