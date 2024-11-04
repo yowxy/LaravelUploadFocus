@@ -24,7 +24,7 @@
 
     {{-- Hero Section --}}
 
-    <section id="hero-section" class= " mb-28 position-relative" >
+    <section id="hero-section" class= " mb-28 position-relative  " >
         <div class="container text-center">
             <p class="txt-h1 pt-5">We are a website <br />that hosts your portfolio</p>
             <p class="text-center text-white fs-4 ">Showcase Your Brilance</p>
@@ -35,49 +35,37 @@
                 </a>
             </div>
 
-            <a href="{{ route('search.index', ['category' => 'UI/UX Design']) }}">
-                <div class="d-flex position-relative mt-5 justify-content-center ">
-                    <div class="box-yellow me-3 img-hover"> <!-- Add margin-end (me-3) to give space -->
-                        <div style="width: 88px; height: 127px; left: 18px; top: 18px; position: absolute">
-                            <div style="width: 84px; height: 63px; left: 4px; top: 0px; position: absolute">
-                                <div class="uiux">UIX</div>
-                                <div class="design">Design</div>
-                            </div>
-                            <div>
-                                <img src="{{  url('images/UIUX.png') }}" alt="" class="img-uiux">
-                            </div>
-                        </div>
-                    </div>
-            </a>
-
-                <a href="{{ route('search.index', ['category' => 'Graphic Design']) }}" >
-                    <div class="box-green me-3 img-hover ">
-                        <div style="width: 88px; height: 127px; left: 18px; top: 18px; position: absolute">
-                            <div style="width: 84px; height: 63px; left: 4px; top: 0px; position: absolute">
-                                <div class="uiux  text-white ">Graphic </div>
-                                <div class="design  text-white ">Design</div>
-                            </div>
-                            <div>
-                                <img src="{{  url('images/PC.png') }}" alt="" class="img-pc">
-                            </div>
+            <div class="category-container d-flex flex-wrap justify-content-center mt-5" style="margin-bottom: 80px">
+                <a href="{{ route('search.index', ['category' => 'UI/UX Design']) }}">
+                    <div class="box-yellow me-3 img-hover" id="UIX">
+                        <div class="category-content">
+                            <div class="uiux">UIX</div>
+                            <div class="design">Design</div>
+                            <img src="{{ url('images/UIUX.png') }}" alt="" class="img-uiux">
                         </div>
                     </div>
                 </a>
 
+                <a href="{{ route('search.index', ['category' => 'Graphic Design']) }}">
+                    <div class="box-green me-3 img-hover" id="graphic-design">
+                        <div class="category-content">
+                            <div class="uiux text-white">Graphic</div>
+                            <div class="design text-white">Design</div>
+                            <img src="{{ url('images/PC.png') }}" alt="" class="img-pc">
+                        </div>
+                    </div>
+                </a>
 
-                <a href="{{ route('search.index', ['category' => 'Website Development']) }}" >
+                <a href="{{ route('search.index', ['category' => 'Website Development']) }}">
                     <div class="box-red img-hover">
-                        <div style="width: 88px; height: 127px; left: 18px; top: 18px; position: absolute">
-                            <div style="width: 84px; height: 63px; left: 4px; top: 0px; position: absolute">
-                                <div class="uiux  text-white ">Website</div>
-                                <div class="design  text-white ">Development</div>
-                            </div>
-                            <div>
-                                <img src="{{  url('images/Webdev.png') }}" alt="" class="img-pc">
-                            </div>
+                        <div class="category-content">
+                            <div class="uiux text-white">Website</div>
+                            <div class="design text-white">Development</div>
+                            <img src="{{ url('images/Webdev.png') }}" alt="" class="img-pc">
                         </div>
                     </div>
                 </a>
+            </div>
 
 
             </div>
@@ -108,11 +96,11 @@
     <section id="info2-section" class="position-relative">
         <div class="container pt-4 d-flex flex-column flex-md-row justify-content-start align-items-center" data-aos="fade-right" >
             <img src="{{ url('images/UIUX2.png') }}" alt="" class="img-UI  img-hover" data-aos="fade-up">
-            <div class=" me-md-5  txt-custom pt-2  mx-auto">
+            <div class=" me-md-5  txt-custom pt-2  mx-auto flex flex-col">
                 <h1 class="ms-2 fw-semibold" >Why should you choose <br>
                     our website? <br>
                 </h1>
-                <p class="mx-2">
+                <p class="mx-2  mb-4    ">
                     MineFolioX is a portfolio platform designed for Gen Z, offering a simple <br>
                     and modern way to create, manage and showcase your work. <br>
                     With easy-to-use features such as secure login, registration,  <br>
@@ -125,7 +113,7 @@
 
 
     {{-- save personal section  --}}
-    <section id="save-personal" class="py-5 ">
+    <section id="save-personal" class="py-5 " style="margin-top: 80px">
         <div class="container text-center">
             <h1 class="fw-semibold mb-4">To save your personal Portfolio</h1>
             <img src="{{ url('images/personal.png') }}" alt="personal" class="img-fluid img-save" data-aos="fade-up">

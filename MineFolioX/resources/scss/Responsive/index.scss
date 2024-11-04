@@ -1,0 +1,81 @@
+/* Ukuran layar 800px hingga 1280px */
+@media (min-width: 800px) and (max-width: 1280px) {
+    #info2-section {
+        display: inline-flex;
+        flex-direction: column;
+    }
+    .img-UI {
+        width: 60%; /* Menyesuaikan ukuran gambar di layar menengah */
+    }
+    .txt-custom {
+        text-align: center; /* Menyesuaikan teks agar lebih responsif */
+    }
+}
+
+/* Ukuran layar maksimal 799px (mobile) */
+@media (max-width: 799px) {
+    #info2-section {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .img-UI {
+        width: 80%; /* Menyesuaikan gambar agar lebih kecil pada layar kecil */
+    }
+    .txt-custom {
+        padding: 0 10px; /* Memberikan sedikit padding agar teks lebih mudah dibaca */
+    }
+    #save-personal .img-save {
+        width: 90%; /* Mengurangi ukuran gambar di bagian 'save personal' untuk mobile */
+    }
+}
+
+
+
+.category-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally */
+}
+
+.box-yellow, .box-green, .box-red {
+    position: relative; /* Allows positioning of inner elements */
+    margin-bottom: 20px; /* Adds spacing between stacked items */
+    transition: transform 0.3s; /* Optional: Add a hover effect */
+}
+
+.box-yellow:hover, .box-green:hover, .box-red:hover {
+    transform: scale(1.05); /* Optional: Slightly enlarge on hover */
+}
+
+.category-content {
+    position: relative; /* Positioning for absolute children */
+    width: 88px;
+    height: 127px;
+    text-align: center; /* Center text */
+}
+
+.img-uiux, .img-pc {
+
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 576px) {
+    .category-container {
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: center; /* Center items */
+    }
+
+
+    #hero-section{
+        height: auto;
+    }
+
+    .category-content {
+        width: 90%; /* Make the content take more width on mobile */
+        max-width: 300px; /* Optional: Limit max width */
+    }
+}
