@@ -43,6 +43,7 @@ Route::get('portofolios/{id}', [PortofolioUpload::class, 'show'])->name('pages.p
 Route::post('logout', [ProfileController::class, 'logout'])->name('logout');
 
 Route::post('/search', [SearchController::class, 'index'])->name('search')->middleware('auth');
+Route::post('/search', [SearchController::class, 'index'])->name('search');
 Route::get('/search', [SearchController::class, 'index'])->name('search.index');
 
 
