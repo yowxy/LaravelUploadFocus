@@ -30,6 +30,8 @@
     #save-personal .img-save {
         width: 90%; /* Mengurangi ukuran gambar di bagian 'save personal' untuk mobile */
     }
+
+
 }
 
 
@@ -68,14 +70,51 @@
         flex-direction: column; /* Stack items vertically on mobile */
         align-items: center; /* Center items */
     }
-
-
     #hero-section{
         height: auto;
     }
+
 
     .category-content {
         width: 90%; /* Make the content take more width on mobile */
         max-width: 300px; /* Optional: Limit max width */
     }
 }
+@media (max-width: 600px) {
+    .txt-MineFolioX-container {
+        width: 100%; /* Isi lebar layar di perangkat kecil */
+        text-align: center; /* Rata tengah konten */
+        position: static; /* Hapus posisi absolut pada layar kecil */
+        padding: 20px; /* Tambahkan padding untuk ruang sekitar */
+        margin-top: 20px; /* Tambahkan jarak dari elemen lainnya */
+    }
+
+    .txt-MineFolioX {
+        font-size: 24px; /* Sesuaikan ukuran teks judul */
+    }
+
+    .txt-paragraf {
+        font-size: 14px; /* Sesuaikan ukuran teks paragraf */
+    }
+    #footer-last{
+        width: 100%;
+    }
+}
+
+/* Atur elemen dalam #button-link menjadi vertikal pada layar kecil */
+@media (max-width: 576px) {
+    #button-link {
+        flex-direction: column; /* Mengubah orientasi elemen menjadi vertikal */
+        align-items: center; /* Menyelaraskan elemen ke tengah */
+    }
+
+    /* Menyesuaikan jarak antar tombol */
+    .btn-category,
+    .btn-loginCreate {
+        width: 100%; /* Memaksimalkan lebar tombol */
+        margin-bottom: 10px; /* Memberikan jarak antar tombol */
+        text-align: center; /* Memusatkan teks di dalam tombol */
+    }
+}
+
+

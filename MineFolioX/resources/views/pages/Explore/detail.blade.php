@@ -20,7 +20,7 @@
         <div class="container">
             <h1>Show Your Portofolio</h1>
 
-            <div class="d-flex" >
+            <div class="d-flex  flex-col" id="button-link">
                 @guest
                 <div class="btn-loginCreate  me-4">
                     <a href="{{ url('login') }}" class="text-decoration-none text-white">Login To CreatePortofolio</a>
@@ -43,8 +43,6 @@
                         <p class="mt-2">Website Development</p>
                     </a>
                 </div>
-
-
 
             </div>
 
