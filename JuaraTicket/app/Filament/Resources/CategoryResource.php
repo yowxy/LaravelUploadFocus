@@ -31,6 +31,10 @@ class CategoryResource extends Resource
                 Forms\Components\FileUpload::make('icon')
                     ->required()
                     ->image(),
+
+                Forms\Components\FileUpload::make('icon_white')
+                    ->required()
+                    ->image(),
             ]);
     }
 
@@ -41,6 +45,8 @@ class CategoryResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('icon')
+                    ->circular(),
+                Tables\Columns\ImageColumn::make('icon_white')
                     ->circular(),
             ])
             ->filters([

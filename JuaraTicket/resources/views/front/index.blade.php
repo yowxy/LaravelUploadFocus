@@ -25,7 +25,7 @@
         <main class="flex flex-col w-full gap-5 mt-5 overflow-x-hidden">
             <section id="Popular" class="flex flex-col gap-3">
                 <h2 class="px-4 font-bold">Popular This Year</h2>
-                <div class="swiper-popular w-full overflow-hidden">
+                <div class="w-full overflow-hidden swiper-popular">
                     <div class="swiper-wrapper">
 
                         @forelse ($popularTickets as $itemPopularTicket)
@@ -34,7 +34,7 @@
                                     <div
                                         class="relative flex items-end w-[345px] h-[220px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
                                         <img src="{{ Storage::url($itemPopularTicket->thumbnail) }}"
-                                            class="absolute w-full h-full object-cover" alt="thumbnail">
+                                            class="absolute object-cover w-full h-full" alt="thumbnail">
                                         <div
                                             class="flex items-center justify-between w-full h-fit rounded-[17px] border border-white/40 p-[8px_10px] mx-4 mb-4 bg-[#94959966] backdrop-blur-sm">
                                             <div>
@@ -63,12 +63,12 @@
             </section>
             <section id="Categories" class="flex flex-col gap-3">
                 <h2 class="px-4 font-bold">By Categories</h2>
-                <div class="swiper-categories w-full overflow-hidden">
+                <div class="w-full overflow-hidden swiper-categories">
                     <div class="swiper-wrapper">
 
                         @forelse ($categories as $itemCategories)
                             <div class="swiper-slide !w-fit">
-                                <a href="category.html" class="card">
+                                <a href="{{route('front.category', $itemCategories->slug) }}" class="card">
                                     <div
                                         class="flex items-center w-fit rounded-full text-nowrap p-[14px_20px] gap-[10px] bg-[#F8F8F9]">
                                         <img src="{{ Storage::url($itemCategories->icon) }}" class="w-6 h-6"
@@ -87,7 +87,7 @@
             </section>
             <section id="Should-Visit" class="flex flex-col gap-3">
                 <h2 class="px-4 font-bold">You Should Visit</h2>
-                <div class="swiper-visit w-full overflow-hidden">
+                <div class="w-full overflow-hidden swiper-visit">
                     <div class="swiper-wrapper">
 
                         @forelse ($sellers as $itemSeller )
@@ -96,7 +96,7 @@
                                 <div
                                     class="relative flex items-end w-[170px] h-[200px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
                                     <img src="{{ Storage::url($itemSeller->photo) }}"
-                                        class="absolute w-full h-full object-cover" alt="thumbnail">
+                                        class="absolute object-cover w-full h-full" alt="thumbnail">
                                     <div
                                         class="flex items-center justify-between w-full h-fit rounded-[17px] border border-white/40 p-[8px_10px] mx-[10px] mb-[10px] bg-[#94959966] backdrop-blur-sm">
                                         <div>
@@ -129,7 +129,7 @@
                             <div class="flex items-center gap-[14px]">
                                 <div class="flex w-[90px] h-[90px] shrink-0 rounded-3xl bg-[#D9D9D9] overflow-hidden">
                                     <img src="{{ Storage::url($itemNewTickets->thumbnail) }}"
-                                        class="w-full h-full object-cover" alt="thumbnail">
+                                        class="object-cover w-full h-full" alt="thumbnail">
                                 </div>
                                 <div class="flex flex-col gap-[6px]">
                                     <h3 class="font-semibold">{{ $itemNewTickets->name }}</h3>
@@ -165,7 +165,7 @@
                 <li class=" text-[#F97316]">
                     <a href="index.html" class="menu">
                         <div class="group flex flex-col items-center text-center gap-[10px]">
-                            <div class="w-6 h-6 flex shrink-0">
+                            <div class="flex w-6 h-6 shrink-0">
                                 <svg class="transition-all duration-300 group-hover:fill-[#F97316]  fill-current"
                                     width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -198,7 +198,7 @@
                 <li class=" text-[#13181D]">
                     <a href="check-booking.html" class="menu">
                         <div class="group flex flex-col items-center text-center gap-[10px]">
-                            <div class="w-6 h-6 flex shrink-0">
+                            <div class="flex w-6 h-6 shrink-0">
                                 <svg class="transition-all duration-300 group-hover:fill-[#F97316]  fill-current"
                                     width="25" height="24" viewBox="0 0 25 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -221,7 +221,7 @@
                 <li class=" text-[#13181D]">
                     <a href="" class="menu">
                         <div class="group flex flex-col items-center text-center gap-[10px]">
-                            <div class="w-6 h-6 flex shrink-0">
+                            <div class="flex w-6 h-6 shrink-0">
                                 <svg class="transition-all duration-300 group-hover:fill-[#F97316]  fill-current"
                                     width="25" height="24" viewBox="0 0 25 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -246,7 +246,7 @@
                 <li class=" text-[#13181D]">
                     <a href="" class="menu">
                         <div class="group flex flex-col items-center text-center gap-[10px]">
-                            <div class="w-6 h-6 flex shrink-0">
+                            <div class="flex w-6 h-6 shrink-0">
                                 <svg class="transition-all duration-300 group-hover:fill-[#F97316]  fill-current"
                                     width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">

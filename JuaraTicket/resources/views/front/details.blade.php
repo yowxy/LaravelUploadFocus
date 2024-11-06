@@ -20,12 +20,12 @@
                     <img src="{{asset('assets/images/icons/heart.svg')}}" class="w-12 h-12" alt="icon">
                 </a>
             </div>
-            <div id="Title" class="absolute bottom-0 w-full p-4 pt-0 z-10">
+            <div id="Title" class="absolute bottom-0 z-10 w-full p-4 pt-0">
                 <div class="flex items-center justify-between w-full h-fit rounded-[17px] border border-white/40 p-[8px_10px] bg-[#94959966] backdrop-blur-sm z-10">
                     <div>
                         <h1 class="font-bold text-white line-clamp-2">{{ $ticket->name }}</h1>
                         <div class="flex items-center gap-[6px]">
-                            <img src="{{ Storage::url($ticket->category->icon) }}" class="w-[22px] h-[22px]" alt="icon">
+                            <img src="{{ Storage::url($ticket->category->icon_white) }}" class="w-[22px] h-[22px]" alt="icon">
                             <p class="text-sm leading-[18px] text-white">{{ $ticket->category->name }}</p>
                         </div>
                     </div>
@@ -35,17 +35,17 @@
                     </p>
                 </div>
             </div>
-            <div class="swiper-gallery w-full overflow-hidden">
+            <div class="w-full overflow-hidden swiper-gallery">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" >
                         <div class="relative flex items-center w-full h-[480px] shrink-0 bg-[#13181D] overflow-hidden">
-                            <img src="{{ Storage::url($ticket->thumbnail) }}" class="absolute w-full h-full object-cover" alt="thumbnail">
+                            <img src="{{ Storage::url($ticket->thumbnail) }}" class="absolute object-cover w-full h-full" alt="thumbnail">
                         </div>
                     </div>
                     @forelse ($ticket->photos as $itemTicketPhoto)
                     <div class="swiper-slide">
                         <div class="relative flex items-center w-full h-[480px] shrink-0 bg-[#13181D] overflow-hidden">
-                            <img src="{{ Storage::url($itemTicketPhoto->photo) }}" class="absolute w-full h-full object-cover" alt="thumbnail">
+                            <img src="{{ Storage::url($itemTicketPhoto->photo) }}" class="absolute object-cover w-full h-full" alt="thumbnail">
                         </div>
                     </div>
                     @empty
@@ -54,7 +54,7 @@
 
                     <div class="swiper-slide">
                         <div class="relative flex items-center w-full h-[480px] shrink-0 bg-[#13181D] overflow-hidden">
-                            <div id="playBtn" class="absolute w-full h-full z-10 bg-transparent"></div>
+                            <div id="playBtn" class="absolute z-10 w-full h-full bg-transparent"></div>
                             <div class="plyr__video-embed" id="player" style="width: 100%; height: 100%;">
                                 <iframe
                                     src="https://www.youtube.com/embed/{{ $ticket->path_video }}origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
@@ -126,7 +126,7 @@
                 <div class="flex items-center justify-between rounded-3xl p-[10px] pr-[14px] bg-[#F8F8F9]">
                     <div class="flex items-center gap-[14px]">
                         <div class="w-[60px] h-[60px] rounded-[20px] overflow-hidden">
-                            <img src="{{ Storage::url($ticket->seller->photo) }}" class="w-full h-full object-cover" alt="">
+                            <img src="{{ Storage::url($ticket->seller->photo) }}" class="object-cover w-full h-full" alt="">
                         </div>
                         <div>
                             <p class="font-bold text-lg leading-[27px]">{{ $ticket->seller->name }}</p>
