@@ -45,7 +45,7 @@
                 </div>
 
             </div>
-
+                                                                                                                   
 
             @foreach ($portofolios as $portofolio)
                 {{-- yang bisa di tekan ke href cuman 1 aja hehehe --}}
