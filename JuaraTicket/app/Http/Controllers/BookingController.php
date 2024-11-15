@@ -42,20 +42,25 @@ class BookingController extends Controller
     public function payment()
     {
         $data = $this->bookingService->payment();
-        dd($data);
+        // dd($data);
         return view('front.payment', $data);
     }
-
-    public function paymmentStore(StorePaymentRequest $request)
+    public function paymentStore(StorePaymentRequest $request)
     {
-        $validated = $request->$validated();
+        // Retrieve validated data from the request
+        $validated = $request->validated();
+
+        // Call the paymentStore method in BookingService
         $bookingTransactionId = $this->bookingService->paymentStore($validated);
 
-        if($bookingTransactionId){
-            return redirect()->route('front.booking_finished',$bookingTransactionId);
+        // Redirect based on the outcome
+        if ($bookingTransactionId) {
+            return redirect()->route('front.booking_finished', $bookingTransactionId);
         }
-        return redirect()->route('front.index')->withErrors(['errors' => 'payment failed. Please try again.']);
+
+        return redirect()->route('front.index')->withErrors(['errors' => 'Payment failed. Please try again.']);
     }
+
 
     public function bookingFinished(BookingTransaction $bookingTransaction){
         return view('front.booking_finished', compact('bookingTransaction'));
