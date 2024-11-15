@@ -19,7 +19,8 @@ Route::get('/browse/{category:slug}', [FrontController::class , 'category'])->na
 Route::get('/details/{ticket:slug}'  ,[FrontController::class  , 'details'])->name('front.details');
 
 Route::get('/check-booking', [ BookingController::class ,'checkBooking'])->name('front.check.booking');
-Route::post('/check-booking/details', [BookingController::class])->name('front.check_booking_details');
+Route::post('/check-booking/details', [BookingController::class, 'checkBookingDetails'])->name('front.check_booking_detail');
+
 
 
 Route::get('/booking/payment', [BookingController::class , 'payment'])->name('front.payment');

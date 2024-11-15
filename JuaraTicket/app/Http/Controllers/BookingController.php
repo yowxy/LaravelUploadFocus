@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreBookingRequest;
+use App\Http\Requests\StoreCheckBookingRequest;
 use App\Http\Requests\StorePaymentRequest;
 use App\Models\BookingTransaction;
 use App\Models\Ticket;
@@ -65,4 +66,29 @@ class BookingController extends Controller
     public function bookingFinished(BookingTransaction $bookingTransaction){
         return view('front.booking_finished', compact('bookingTransaction'));
     }
+
+
+    public function checkBooking (){
+        return view ('front.check_booking');
+    }
+    public function checkBookingDetails(StoreCheckBookingRequest $request)
+    {
+        // Validate the incoming request data
+        $validated = $request->validated();
+
+        // Get booking details using the validated data
+        $bookingDetails = $this->bookingService->getBookingDetails($validated);
+
+        // Dump and die the $bookingDetails to see its contents
+        // dd($bookingDetails);
+
+        // The following code will not execute until you remove dd()
+        if ($bookingDetails) {
+            return view('front.check_booking_detail', compact('bookingDetails'));
+        }
+
+        return redirect()->route('front.check.booking')->withErrors(['error' => 'transaction not found']);
+    }
+
+
 }

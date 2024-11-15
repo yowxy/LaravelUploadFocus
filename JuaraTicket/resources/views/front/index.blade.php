@@ -163,7 +163,7 @@
         <nav id="Bottom-Nav" class="fixed bottom-0 w-full max-w-[640px] bg-white px-4 py-5 z-30">
             <ul class="flex justify-evenly max-[400px]:justify-between">
                 <li class=" text-[#F97316]">
-                    <a href="index.html" class="menu">
+                    <a href="{{ route('front.index') }}" class="menu">
                         <div class="group flex flex-col items-center text-center gap-[10px]">
                             <div class="flex w-6 h-6 shrink-0">
                                 <svg class="transition-all duration-300 group-hover:fill-[#F97316]  fill-current"
@@ -196,7 +196,7 @@
                     </a>
                 </li>
                 <li class=" text-[#13181D]">
-                    <a href="check-booking.html" class="menu">
+                    <a href="{{ route('front.check.booking') }}" class="menu">
                         <div class="group flex flex-col items-center text-center gap-[10px]">
                             <div class="flex w-6 h-6 shrink-0">
                                 <svg class="transition-all duration-300 group-hover:fill-[#F97316]  fill-current"
