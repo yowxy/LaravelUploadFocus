@@ -1,10 +1,8 @@
 <x-mail::message>
-# Introduction
+Hi {{ $booking->name }}, terima kasih ttelah memesan tiket wisata di JuaraTicket, Kami sedang memeriksan pembayaran anda saat ini, anda dapat memeriksa secara berkala pada website kami dan berikut adalah bookig transaction ID anda : {{ $booking->booking_trx_id }}
 
-The body of your message.
-
-<x-mail::button :url="''">
-Button Text
+<x-mail::button :url="route('front.check.booking')">
+Check Booking
 </x-mail::button>
 
 Thanks,<br>
