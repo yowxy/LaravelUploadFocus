@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontController::class , 'index'])->name('front.index');
 
 Route::get('/browse/{category:slug}', [FrontController::class , 'category'])->name('front.category');
+Route::get('/explore/{seller:slug}', [FrontController::class , 'explore'])->name('front.seller');
 
 
 Route::get('/details/{ticket:slug}'  ,[FrontController::class  , 'details'])->name('front.details');

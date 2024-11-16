@@ -11,7 +11,7 @@
     <div class="relative flex flex-col w-full min-h-screen max-w-[640px] mx-auto bg-[#F8F8F9]">
         <div id="background" class="fixed w-full max-w-[640px] top-0 h-screen z-0">
             <div class="absolute z-0 w-full h-[459px] bg-[linear-gradient(180deg,#000000_12.61%,rgba(0,0,0,0)_70.74%)]"></div>
-            <img src="{{  Storage::url($bookingDetails->tickets->thumbnail) }}" class="w-full h-full object-cover" alt="background">
+            <img src="{{  Storage::url($bookingDetails->tickets->thumbnail) }}" class="object-cover w-full h-full" alt="background">
         </div>
         <div id="Top-Nav-Fixed" class="relative flex items-center justify-between w-full max-w-[640px] px-4 mt-[60px] z-20">
             <div class="fixed flex items-center justify-between w-full max-w-[640px] -ml-4 px-4 mx-auto">
@@ -22,7 +22,7 @@
                     <img src="{{asset("assets/images/icons/heart.svg")}}" class="w-12 h-12" alt="icon">
                 </a>
             </div>
-            <div class="flex items-center justify-center h-12 w-full shrink-0">
+            <div class="flex items-center justify-center w-full h-12 shrink-0">
                 <h1 class="font-bold text-lg leading-[27px] text-white text-center w-full">Booking Details</h1>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="flex items-center justify-between rounded-3xl p-[6px] pr-[14px] bg-white overflow-hidden">
                 <div class="flex items-center gap-[14px]">
                     <div class="flex w-[90px] h-[90px] shrink-0 rounded-3xl bg-[#D9D9D9] overflow-hidden">
-                        <img src="{{  Storage::url($bookingDetails->tickets->thumbnail) }}" class="w-full h-full object-cover" alt="thumbnail">
+                        <img src="{{  Storage::url($bookingDetails->tickets->thumbnail) }}" class="object-cover w-full h-full" alt="thumbnail">
                     </div>
                     <div class="flex flex-col gap-[6px]">
                         <h3 class="font-semibold">  {{ $bookingDetails->tickets->name }}</h3>
@@ -49,7 +49,7 @@
                 </p>
             </div>
             <div class="relative w-[361px] h-[504px] shrink-0 mx-auto overflow-hidden">
-                <img src="{{asset("assets/images/backgrounds/receipt.svg")}}" class="absolute w-full h-full object-contain" alt="background">
+                <img src="{{asset("assets/images/backgrounds/receipt.svg")}}" class="absolute object-contain w-full h-full" alt="background">
                 <div class="relative flex flex-col p-5 pb-[30px] gap-6">
                     <img src="{{asset("assets/images/icons/ticket-star.svg")}}" class="w-20 h-20 mx-auto" alt="icon">
                     <div class="flex flex-col gap-[14px] shrink-0 h-full">
